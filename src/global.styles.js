@@ -3,7 +3,8 @@ import { createGlobalStyle } from 'styled-components'
 export const GlobalStyle = createGlobalStyle`
     :root {
         --color-primary: #10bbd5;
-        --color-blue-dark:#001950
+        --color-blue-dark:#001950;
+        --color-grey-dark: #444;
     }
 
     html {
@@ -56,7 +57,7 @@ export const GlobalStyle = createGlobalStyle`
     a:hover,
     a:focus {
       text-decoration: none;
-      color: currentColor;
+      color: var(--color-grey-dark);
     }
 
     .btn,

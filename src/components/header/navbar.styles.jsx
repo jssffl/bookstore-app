@@ -1,37 +1,23 @@
 import styled from 'styled-components/macro'
-import chevronUp from '../../assets/chevron-small-up.svg'
-import chevronDown from '../../assets/chevron-small-down.svg'
 
-const baseList = `
-display: inline-block;
-    height: 40px;
-    line-height: 40px;
-    width:100%;
-    padding: 0 20px;
-    background: #fff;
-    border-bottom: 1px solid #f0f0f0;
-`
-const show = `
-    opacity: 1;
-    transform: scale(1,1);
-    position: relative;
-`
-const hide = `
-    opacity: 0;
-    transform: scale(0,1);
-    position: absolute;
-`
+export const SideBar = styled.div`
+  display: none;
 
+  @media screen and (max-width: 900px) {
+    display: block;
+  }
+`
 export const Burger = styled.button`
   width: 21px;
   height: 21px;
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 15px;
+  left: 15px;
   background-color: transparent;
-  z-index: 999;
-  transform: ${({ open }) => (open ? 'translateX(240px)' : 'translateX(0)')};
+  z-index: 1000;
+  transform: ${({ open }) => (open ? 'translateX(250px)' : 'translateX(0)')};
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 
   span {
     position: absolute;
@@ -57,6 +43,7 @@ export const Burger = styled.button`
       top: 6px;
       opacity: ${({ open }) => (open ? '0' : '1')};
     }
+
     &::after {
       top: ${({ open }) => (open ? '0' : '12px')};
 
@@ -64,57 +51,22 @@ export const Burger = styled.button`
     }
   }
 `
-export const Dropdown = styled.ul`
-  ${hide}
-`
-
-export const ToggleLabel = styled.label`
-  position: relative;
-  ${baseList}
-
-  ::after {
-    content: '';
-    line-height: inherit;
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 20px;
-    width: 20px;
-    background: url(${chevronDown}) right center no-repeat;
-  }
-`
 
 export const Menu = styled.div`
-  display: flex;
-  flex-direction: column;
   background-color: #f0f0f0;
   width: 250px;
-  min-height: 100vh;
+  height: 100vh;
   font-size: 14px;
   position: absolute;
   top: 0;
   left: 0;
   transition: transform 0.3s ease-in-out;
-  box-shadow: 2px 3px 5px 0px rgb(0, 0, 0, 75%);
-  z-index: 998;
+
+  z-index: 1000;
   transform: ${({ open }) => (open ? 'translateX(0);' : 'translateX(-100%);')};
-
-  a {
-    ${baseList}
-  }
-
-  input:checked ~ ${Dropdown} {
-    ${show}
-  }
-
-  input:checked ~ ${ToggleLabel}::after {
-    background: url(${chevronUp}) right center no-repeat;
-  }
-
-  input {
-    display: none;
-  }
+  color: var(--color-grey-dark);
+  box-shadow: ${({ open }) =>
+    open ? ' 2px 3px 5px 0px rgb(0, 0, 0, 75%)' : 'none'};
 `
 
 export const MenuButton = styled.button`
@@ -125,11 +77,4 @@ export const MenuButton = styled.button`
   border-bottom: 1px solid #f0f0f0;
   background: ${({ active }) => (active ? 'var(--color-blue-dark)' : '#fff')};
   color: ${({ active }) => (active ? '#fff' : 'inherit')};
-`
-
-export const ShopMenu = styled.ul`
-  ${({ active }) => (active ? show : hide)};
-`
-export const AccountMenu = styled.ul`
-  ${({ active }) => (active ? show : hide)};
 `

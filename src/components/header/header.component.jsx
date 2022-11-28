@@ -1,22 +1,57 @@
-import { Outlet } from 'react-router-dom'
-import { useState } from 'react'
 import NavBar from './navbar.component'
-import { Container } from './header.styles'
+import {
+  PrimaryWrap,
+  PrimaryContainer,
+  LogoContainer,
+  TheHeader,
+  UserNavWrap,
+  UserNavContainer,
+  ShopNavWrap,
+  ShopNavContainer,
+  PromotionBannerWrap,
+} from './header.styles'
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const toggleMenu = (isMenuOpen) => {
-    setIsMenuOpen((prevState) => !prevState)
-  }
+import UserNav from './user-nav.component'
+import ShopNav from './shop-nav.component'
+
+import SearchForm from './search-form.component'
+import PromotionBanner from './promotion-banner.component'
+
+import logo from '../../assets/logo.png'
+
+const Header = (props) => {
+  const { isMenuOpen, toggleMenu } = props
   return (
-    <Container isMenuOpen={isMenuOpen}>
-      <header>header</header>
+    <>
+      <TheHeader>
+        {/* <AccountNav /> */}
 
+        <UserNavWrap>
+          <UserNavContainer>
+            <UserNav />
+          </UserNavContainer>
+        </UserNavWrap>
+        <PrimaryWrap>
+          <PrimaryContainer>
+            <LogoContainer to='/'>
+              <img src={logo} alt='log' />
+              <h1>Bookstore</h1>
+            </LogoContainer>
+            <SearchForm />
+          </PrimaryContainer>
+        </PrimaryWrap>
+        <ShopNavWrap>
+          <ShopNavContainer>
+            <ShopNav />
+          </ShopNavContainer>
+        </ShopNavWrap>
+
+        <PromotionBannerWrap>
+          <PromotionBanner />
+        </PromotionBannerWrap>
+      </TheHeader>
       <NavBar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-      <main>
-        <Outlet />
-      </main>
-    </Container>
+    </>
   )
 }
 
