@@ -1,16 +1,23 @@
 import { useState } from 'react'
 // import { useDispatch, useSelector } from 'react-redux'
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 // import {
 //   googleSignInStart,
 //   emailSignInStart,
 // } from '../../store/user/user.action'
 import FormInput from '../UI/form-input.component'
 import CustomButton from '../UI/button.component'
-import { ButtonContainer, SignInContainer } from './sign-in-form.styles'
+import {
+  ButtonContainer,
+  SignInContainer,
+  MessageBanner,
+} from './sign-in-form.styles'
 // import { selectUserError } from '../../store/user/user.selector'
 
-import { signInAuthUserWithEmailAndPassword } from '../../utils/firebase/firebase.utils'
+import {
+  signInAuthUserWithEmailAndPassword,
+  signInWithGooglePopup,
+} from '../../utils/firebase/firebase.utils'
 
 const defaultFormFields = {
   email: '',
@@ -20,8 +27,10 @@ const defaultFormFields = {
 const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields)
   const { email, password } = formFields
+  const [error, setError] = useState(null)
+
   // const dispatch = useDispatch()
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
   const resetFormField = () => {
     setFormFields(defaultFormFields)
   }
@@ -33,12 +42,25 @@ const SignInForm = () => {
 
     try {
       const user = await signInAuthUserWithEmailAndPassword(email, password)
-      console.log(user)
+
       // dispatch(emailSignInStart(email, password))
-      // resetFormField()
-      // navigate('/')
+      resetFormField()
+      navigate('/')
+
+      setFormFields(defaultFormFields)
     } catch (error) {
       console.log('user sign in failed', error)
+
+      switch (error.code) {
+        case 'auth/wrong-password':
+          setError('Incorrent  Email or password ')
+          break
+        case 'auth/user-not-found':
+          setError('No user associated with this email')
+          break
+        default:
+          setError('Something went wrong, please try later!')
+      }
     }
   }
 
@@ -47,10 +69,10 @@ const SignInForm = () => {
     setFormFields({ ...formFields, [name]: value })
   }
 
-  // const signInWithGoogle = () => {
-  //   dispatch(googleSignInStart())
-  //   navigate('/shop')
-  // }
+  const signInWithGoogle = async () => {
+    const response = await signInWithGooglePopup()
+    console.log(response)
+  }
 
   return (
     <SignInContainer>
@@ -82,7 +104,7 @@ const SignInForm = () => {
             SIGN IN
           </CustomButton>
           <CustomButton
-            // onClick={signInWithGoogle}
+            onClick={signInWithGoogle}
             type='button'
             buttonType='add'
           >
@@ -90,6 +112,12 @@ const SignInForm = () => {
           </CustomButton>
         </ButtonContainer>
       </form>
+
+      {error && (
+        <MessageBanner error={error}>
+          <p>{error}</p>
+        </MessageBanner>
+      )}
     </SignInContainer>
   )
 }

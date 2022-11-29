@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import UserNav from './user-nav.component'
-import { Burger, Menu, MenuButton, SideBar } from './navbar.styles'
+import { Burger, Menu, MenuButton, NavBarWrap } from './navbar.styles'
 import ShopNav from './shop-nav.component'
 
 const NavBar = (props) => {
@@ -12,7 +11,7 @@ const NavBar = (props) => {
   }
 
   return (
-    <SideBar>
+    <NavBarWrap>
       <Burger open={isMenuOpen} onClick={onToggleMenu}>
         <span />
       </Burger>
@@ -35,7 +34,7 @@ const NavBar = (props) => {
         {active === 'shop' && <ShopNav />}
         {active === 'account' && <UserNav />}
       </Menu>
-    </SideBar>
+    </NavBarWrap>
   )
 }
 

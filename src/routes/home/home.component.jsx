@@ -1,20 +1,14 @@
-import {
-  MainContent,
-  SideBar,
-  BlockWrap,
-  BannerWrap,
-  SubBannerWrap,
-  PanelWrap,
-} from './home.styles'
+import { BlockWrap, BannerWrap, SubBannerWrap, PanelWrap } from './home.styles'
 import featuredImg from '../../assets/christmas.webp'
-
+import BaseSideBar from '../../components/UI/base-sidebar.component'
+import MainContent from '../../components/UI/main-content.component'
 const Home = () => {
   return (
     <>
-      <SideBar>
+      <BaseSideBar>
         <BlockWrap>Newsletter</BlockWrap>
         <BlockWrap>BLOG</BlockWrap>
-      </SideBar>
+      </BaseSideBar>
       <MainContent>
         <BannerWrap>
           <a href='#'>

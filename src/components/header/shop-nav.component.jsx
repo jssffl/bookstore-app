@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   SubDropdown,
   ShopMenu,
@@ -7,6 +7,8 @@ import {
   ToggleDropDown,
   Dropdown,
 } from './shop-nav.styles'
+import { useSelector } from 'react-redux'
+import { selectBooks, selectCategories } from '../../store/books/books.selector'
 
 const ShopNav = () => {
   const [categoriesList, setCategoriesList] = useState(false)
@@ -14,9 +16,10 @@ const ShopNav = () => {
   const [booksbylangList, setBooksbylangList] = useState(false)
   const [hoverSpan, setHoverSpan] = useState(false)
   const [hoverDropdown, setHoverDropdown] = useState(false)
-  const [deviceSize, changeDeviceSize] = useState(window.innerWidth)
+  const [deviceSize, setDeviceSize] = useState(window.innerWidth)
 
   const hoverEnterSpanHandler = () => {
+    console.log(deviceSize)
     if (deviceSize < 900) return
     setHoverSpan(true)
   }
@@ -32,6 +35,20 @@ const ShopNav = () => {
     if (deviceSize < 900) return
     setHoverDropdown(false)
   }
+
+  useEffect(() => {
+    function handleWindowResize() {
+      setDeviceSize(window.innerWidth)
+    }
+
+    window.addEventListener('resize', handleWindowResize)
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize)
+    }
+  }, [])
+
+  const categories = useSelector(selectCategories)
 
   return (
     <ShopMenu>
@@ -60,7 +77,12 @@ const ShopNav = () => {
             </ToggleSubDropdown>
             <SubDropdown open={categoriesList}>
               <li>
-                <Link to='/shop/life'>Life</Link>
+                {categories &&
+                  Object.keys(categories).map((title) => (
+                    <Link key={title} to={title}>
+                      {title}
+                    </Link>
+                  ))}
               </li>
             </SubDropdown>
           </li>

@@ -4,17 +4,6 @@ import styled from 'styled-components/macro'
 //   grid-column: center-start/ center-end;
 // `
 
-export const SideBar = styled.div`
-  grid-column: center-start/ col-start 3;
-  padding: 5px 5px 5px 20px;
-`
-export const MainContent = styled.div`
-  grid-column: col-start 3 / center-end;
-
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-`
-
 export const BlockWrap = styled.div`
   width: 100%;
   height: 280px;

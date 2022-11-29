@@ -9,7 +9,7 @@ const show = `
 `
 const hide = `
     opacity: 0;
-    transform: scale(0,1);
+    transform: scale(1,0);
     position: absolute;
 `
 const chevronDown = `&::after{ background: url(${chevronDownIcon}) right center no-repeat}`
@@ -38,6 +38,7 @@ export const SubDropdown = styled.ul`
 
 export const ShopMenu = styled.ul`
   display: flex;
+  text-transform: capitalize;
 
   > li:first-child {
     display: none;
@@ -133,6 +134,7 @@ export const ShopMenu = styled.ul`
       padding-left: 10px;
       line-height: 25px;
       height: 25px;
+      font-size: 14px;
 
       &:hover {
         background-color: #f0f0f0;

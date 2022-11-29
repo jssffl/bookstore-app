@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom'
 import { UserMenu } from './user-nav.styles'
+
+import { signOutUser } from '../../utils/firebase/firebase.utils'
+import { useSelector } from 'react-redux'
+import { selectCurrentUser } from '../../store/user/user.slice'
 const UserNav = () => {
+  const currentUser = useSelector(selectCurrentUser)
+
   return (
     <UserMenu>
       <li>
@@ -9,8 +15,12 @@ const UserNav = () => {
       </li>
       <li>
         <Link to='/'>Order status</Link>
-        <Link to='/'>Sign in</Link>
-        <Link to='/'>Sign out</Link>
+        {!currentUser && <Link to='/account/login'>Sign in</Link>}
+        {currentUser && (
+          <Link to='/' onClick={signOutUser}>
+            Sign out
+          </Link>
+        )}
       </li>
     </UserMenu>
   )

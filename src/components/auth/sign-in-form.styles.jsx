@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { Container } from './sign-up-form.styles'
+import { Container, errorBanner } from './sign-up-form.styles'
 
 export const SignInContainer = styled(Container)`
   @media screen and (max-width: 700px) {
@@ -22,4 +22,20 @@ export const ButtonContainer = styled.div`
   @media screen and (max-width: 700px) {
     margin-top: 40px;
   }
+`
+
+export const MessageBanner = styled.div`
+  margin-top: 25px;
+  padding-left: 10px;
+  background-color: pink;
+  border-radius: 5px;
+  font-size: 14px;
+
+  p {
+    padding: 10px 0;
+  }
+
+  ${(props) => {
+    return props.error ? errorBanner : ''
+  }}
 `

@@ -9,7 +9,6 @@ export const PromotionBannerWrap = styled.div`
   transform: translateX(-50%);
   z-index: 100;
   width: 300px;
-  /* display: flex; */
 
   > * {
     height: 100%;
@@ -22,6 +21,12 @@ export const PromotionBannerWrap = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  a:hover,
+  a:active,
+  a:visited {
+    color: #fff;
   }
 
   @media screen and (max-width: 900px) {

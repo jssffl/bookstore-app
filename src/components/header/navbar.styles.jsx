@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro'
 
-export const SideBar = styled.div`
+export const NavBarWrap = styled.div`
   display: none;
 
   @media screen and (max-width: 900px) {
@@ -55,7 +55,7 @@ export const Burger = styled.button`
 export const Menu = styled.div`
   background-color: #f0f0f0;
   width: 250px;
-  height: 100vh;
+  height: 100%;
   font-size: 14px;
   position: absolute;
   top: 0;

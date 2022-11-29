@@ -32,34 +32,31 @@ const SignUpForm = () => {
   // const dispatch = useDispatch()
   // const error = useSelector(selectUserError)
 
-  // const [message, setMessage] = useState(null)
+  const [message, setMessage] = useState(null)
 
   const submitHandler = async (e) => {
     e.preventDefault()
 
-    const { user } = await createAuthUserWithEmailAndPassword(email, password)
-    const userSnapShot = await createUserDocumentFromAuth(user, {
-      user,
-      displayName,
-    })
-    console.log(userSnapShot)
-    // try {
-    //   dispatch(signUpStart(email, password, displayName))
-    //   setFormFields(defaultFormFields)
-    //   setMessage('Signup successfully!')
-    // } catch (error) {
-    //   console.log(error.code)
-    //   if (error.code === 'auth/email-already-in-use') {
-    //     setMessage('Email already in use!')
-    //   } else if (
-    //     error.code ===
-    //     'Password should be at least 6 characters (auth/weak-password).'
-    //   ) {
-    //     setMessage('Password should be at least 6 characters!')
-    //   } else {
-    //     setMessage('Something went wrong, please try later!')
-    //   }
-    // }
+    try {
+      const { user } = await createAuthUserWithEmailAndPassword(email, password)
+      await createUserDocumentFromAuth(user, { displayName })
+      setMessage('Signup successfully!')
+
+      setFormFields(defaultFormFields)
+    } catch (error) {
+      console.log(error.code)
+
+      switch (error.code) {
+        case 'auth/email-already-in-use':
+          setMessage('Email already in use!')
+          break
+        case 'Password should be at least 6 characters (auth/weak-password).':
+          setMessage('Password should be at least 6 characters!')
+          break
+        default:
+          setMessage('Something went wrong, please try later!')
+      }
+    }
   }
 
   const handleChange = (e) => {
@@ -107,12 +104,11 @@ const SignUpForm = () => {
           <CustomButton buttonType='add'>SIGN UP</CustomButton>
         </ButtonContainer>
       </form>
-
-      {/* {message && (
-        <MessageBanner error={error}>
+      {message && (
+        <MessageBanner error={message}>
           <p>{message}</p>
         </MessageBanner>
-      )} */}
+      )}
     </SignUpContainer>
   )
 }

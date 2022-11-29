@@ -6,7 +6,8 @@ export const UserMenu = styled.ul`
   width: 100%;
   height: 100%;
 
-  a {
+  a,
+  a:visited {
     color: #d0d0d0;
     line-height: 40px;
     padding: 0 10px;

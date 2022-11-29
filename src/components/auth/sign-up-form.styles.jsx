@@ -58,12 +58,12 @@ export const ButtonContainer = styled.div`
   }
 `
 
-const successBanner = `
+export const successBanner = `
 color: #155724;
 background-color: #d4edda;
 border-color: #c3e6cb;`
 
-const errorBanner = `
+export const errorBanner = `
 color: #721c24;
 background-color: #f8d7da;
 border-color: #f5c6cb;`
