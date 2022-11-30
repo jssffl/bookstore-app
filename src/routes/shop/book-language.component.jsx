@@ -1,23 +1,24 @@
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
+
+import { selectLanguage } from '../../store/books/books.selector'
 import BookCard from '../../components/book/book-card.component'
 import SideBarWrap from '../../components/UI/sidebar.component'
 import MainContentWrap from '../../components/UI/main-content.component'
 import BaseBanner from '../../components/UI/base-banner.component'
-import { selectBestsellers } from '../../store/books/books.selector'
 
 import { ProductsWrap, Sidebar, Heading, BaseLink } from './book-shop.styles.'
 import { ReactComponent as ChevronRight } from '../../assets/chevron-left.svg'
 
-const BookBestsellers = () => {
-  const { bestsellers } = useParams()
-  const bookBestsellers = useSelector(selectBestsellers)
-  const [products, setProducts] = useState(bookBestsellers)
+const BookLanguage = () => {
+  const { lang } = useParams()
+  const bookLanguage = useSelector(selectLanguage)
+  const [products, setProducts] = useState(bookLanguage[lang])
 
   useEffect(() => {
-    setProducts(bookBestsellers)
-  }, [bestsellers, bookBestsellers])
+    setProducts(bookLanguage[lang])
+  }, [lang, bookLanguage])
 
   return (
     <>
@@ -27,11 +28,23 @@ const BookBestsellers = () => {
             <ChevronRight width='25' heigh='25' />
             <h3>Back to Homepage</h3>
           </Heading>
-          <ul></ul>
+          <ul>
+            {bookLanguage &&
+              Object.keys(bookLanguage).map((title) => (
+                <li key={title}>
+                  <BaseLink
+                    to={'/category/' + title}
+                    active={+(title === lang)}
+                  >
+                    {title}
+                  </BaseLink>
+                </li>
+              ))}
+          </ul>
         </Sidebar>
       </SideBarWrap>
       <MainContentWrap>
-        <BaseBanner>Bestsellers</BaseBanner>
+        <BaseBanner>Featured {lang}</BaseBanner>
         <ProductsWrap>
           {products &&
             products.map((item) => <BookCard item={item} key={item.id} />)}
@@ -41,4 +54,4 @@ const BookBestsellers = () => {
   )
 }
 
-export default BookBestsellers
+export default BookLanguage

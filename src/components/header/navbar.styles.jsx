@@ -55,7 +55,7 @@ export const Burger = styled.button`
 export const Menu = styled.div`
   background-color: #f0f0f0;
   width: 250px;
-  height: 100%;
+  height: 100vh;
   font-size: 14px;
   position: absolute;
   top: 0;

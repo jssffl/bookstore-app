@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import {
   SubDropdown,
@@ -8,7 +8,7 @@ import {
   Dropdown,
 } from './shop-nav.styles'
 import { useSelector } from 'react-redux'
-import { selectBooks, selectCategories } from '../../store/books/books.selector'
+import { selectCategories } from '../../store/books/books.selector'
 
 const ShopNav = () => {
   const [categoriesList, setCategoriesList] = useState(false)
@@ -17,9 +17,10 @@ const ShopNav = () => {
   const [hoverSpan, setHoverSpan] = useState(false)
   const [hoverDropdown, setHoverDropdown] = useState(false)
   const [deviceSize, setDeviceSize] = useState(window.innerWidth)
+  const { pathname } = useLocation()
+  const categories = useSelector(selectCategories)
 
   const hoverEnterSpanHandler = () => {
-    console.log(deviceSize)
     if (deviceSize < 900) return
     setHoverSpan(true)
   }
@@ -37,6 +38,11 @@ const ShopNav = () => {
   }
 
   useEffect(() => {
+    setHoverSpan(false)
+    setHoverDropdown(false)
+  }, [pathname])
+
+  useEffect(() => {
     function handleWindowResize() {
       setDeviceSize(window.innerWidth)
     }
@@ -47,8 +53,6 @@ const ShopNav = () => {
       window.removeEventListener('resize', handleWindowResize)
     }
   }, [])
-
-  const categories = useSelector(selectCategories)
 
   return (
     <ShopMenu>
@@ -79,8 +83,8 @@ const ShopNav = () => {
               <li>
                 {categories &&
                   Object.keys(categories).map((title) => (
-                    <Link key={title} to={title}>
-                      {title}
+                    <Link key={title} to={'/category/' + title}>
+                      {title.split('-').join(' ')}
                     </Link>
                   ))}
               </li>
@@ -95,8 +99,8 @@ const ShopNav = () => {
             </ToggleSubDropdown>
             <SubDropdown open={bestsellingList}>
               <li>
-                <Link to='/shop?lab=jingyong'>Jing Yong</Link>
-                <Link to='/shop?lab=harrypotter'>Harry Potter</Link>
+                <Link to='/series/jin-yong'>Jin Yong</Link>
+                <Link to='/series/harry-potter'>Harry Potter</Link>
               </li>
             </SubDropdown>
           </li>
@@ -109,9 +113,8 @@ const ShopNav = () => {
             </ToggleSubDropdown>
             <SubDropdown open={booksbylangList}>
               <li>
-                <Link to='/shop?lang=EN'>English</Link>
-                <Link to='/shop?lang=CH'>Chinese</Link>
-                <Link to='/shop?lang=JP'>Japanese</Link>
+                <Link to='/lang/english'>English</Link>
+                <Link to='/lang/chinese'>Chinese</Link>
               </li>
             </SubDropdown>
           </li>
@@ -120,7 +123,7 @@ const ShopNav = () => {
 
       <li>
         <Link to='/'>News Releases</Link>
-        <Link to='/'>Bestsellers</Link>
+        <Link to='/bestsellers'>Bestsellers</Link>
       </li>
     </ShopMenu>
   )

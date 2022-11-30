@@ -1,4 +1,3 @@
-import NavBar from './navbar.component'
 import {
   PrimaryWrap,
   PrimaryContainer,
@@ -9,49 +8,47 @@ import {
   ShopNavWrap,
   ShopNavContainer,
   PromotionBannerWrap,
+  DeskWrap,
 } from './header.styles'
 
 import UserNav from './user-nav.component'
 import ShopNav from './shop-nav.component'
-
 import SearchForm from './search-form.component'
 import PromotionBanner from './promotion-banner.component'
 
 import logo from '../../assets/logo.png'
+import CartIcon from '../cart/cart-icon.component'
 
-const Header = (props) => {
-  const { isMenuOpen, toggleMenu } = props
+const Header = () => {
   return (
-    <>
-      <TheHeader>
-        {/* <AccountNav /> */}
-
-        <UserNavWrap>
-          <UserNavContainer>
+    <TheHeader>
+      <UserNavWrap>
+        <UserNavContainer>
+          <DeskWrap>
             <UserNav />
-          </UserNavContainer>
-        </UserNavWrap>
-        <PrimaryWrap>
-          <PrimaryContainer>
-            <LogoContainer to='/'>
-              <img src={logo} alt='log' />
-              <h1>Bookstore</h1>
-            </LogoContainer>
-            <SearchForm />
-          </PrimaryContainer>
-        </PrimaryWrap>
-        <ShopNavWrap>
-          <ShopNavContainer>
-            <ShopNav />
-          </ShopNavContainer>
-        </ShopNavWrap>
+          </DeskWrap>
+          <CartIcon />
+        </UserNavContainer>
+      </UserNavWrap>
+      <PrimaryWrap>
+        <PrimaryContainer>
+          <LogoContainer to='/'>
+            <img src={logo} alt='log' />
+            <h1>Bookstore</h1>
+          </LogoContainer>
+          <SearchForm />
+        </PrimaryContainer>
+      </PrimaryWrap>
+      <ShopNavWrap>
+        <ShopNavContainer>
+          <ShopNav />
+        </ShopNavContainer>
+      </ShopNavWrap>
 
-        <PromotionBannerWrap>
-          <PromotionBanner />
-        </PromotionBannerWrap>
-      </TheHeader>
-      <NavBar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-    </>
+      <PromotionBannerWrap>
+        <PromotionBanner />
+      </PromotionBannerWrap>
+    </TheHeader>
   )
 }
 

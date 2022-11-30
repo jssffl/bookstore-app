@@ -8,22 +8,26 @@ import {
   PriceWrap,
 } from './book-card.styles'
 import CustomButton from '../UI/button.component'
-
+import { selectCartItems } from '../../store/cart/cart.selector'
+import { addItemToCart, setIsCartOpen } from '../../store/cart/cart.slice'
 const BookCard = (props) => {
-  const { image, title, author, price, category, id } = props.item
+  const { image, title, author, price, id } = props.item
   const dispatch = useDispatch()
-  // const cartItems = useSelector(selectCartItems)
+  const cartItems = useSelector(selectCartItems)
   const navigate = useNavigate()
 
   const addCartHandler = (e) => {
-    // dispatch(addItemToCart(cartItems, props.item))
-    // if (cartItems.length === 0) {
-    //   dispatch(setIsCartOpen(true))
-    // }
+    dispatch(addItemToCart(props.item))
+    if (cartItems && cartItems.length === 0) {
+      dispatch(setIsCartOpen(true))
+    }
+  }
+  const navigateToBookPage = (book) => {
+    navigate(`/shop//${id}`)
   }
 
   return (
-    <BookCardWrap>
+    <BookCardWrap onClick={() => navigateToBookPage}>
       <ImgWrap>
         <img src={image} alt={title} />
       </ImgWrap>

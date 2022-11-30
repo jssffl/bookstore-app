@@ -194,7 +194,7 @@ export const BOOK_DATA = [
 
       {
         id: 12,
-        title: 'the-stranger',
+        title: 'The stranger',
         author: 'Albert Camus',
         price: 15.04,
         description:

@@ -9,12 +9,11 @@ const multiEllipsis = `
 `
 
 export const BookCardWrap = styled.div`
-  width: 180px;
+  width: 181px;
   height: 280px;
   background-color: #f8f8f9;
   font-size: 14px;
   padding: 5px 10px;
-  cursor: pointer;
   z-index: 1;
   margin: 0px 5px 5px 0;
 
@@ -22,13 +21,6 @@ export const BookCardWrap = styled.div`
     width: 100%;
     border-radius: 10px;
     margin-top: 5px;
-  }
-  &:hover {
-    transform: scale(1.01);
-  }
-
-  @media screen and (max-width: 576px) {
-    height: 320px;
   }
 `
 

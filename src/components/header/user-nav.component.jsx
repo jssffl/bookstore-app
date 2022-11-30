@@ -3,7 +3,8 @@ import { UserMenu } from './user-nav.styles'
 
 import { signOutUser } from '../../utils/firebase/firebase.utils'
 import { useSelector } from 'react-redux'
-import { selectCurrentUser } from '../../store/user/user.slice'
+import { selectCurrentUser } from '../../store/user/user.selector'
+
 const UserNav = () => {
   const currentUser = useSelector(selectCurrentUser)
 

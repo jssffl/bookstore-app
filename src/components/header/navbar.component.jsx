@@ -30,7 +30,6 @@ const NavBar = (props) => {
             Account
           </MenuButton>
         </div>
-
         {active === 'shop' && <ShopNav />}
         {active === 'account' && <UserNav />}
       </Menu>

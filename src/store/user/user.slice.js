@@ -7,8 +7,6 @@ const initialState = {
   cartItems: [],
 }
 
-export const selectCurrentUser = (state) => state.user.currentUser
-
 export const userSlice = createSlice({
   name: 'user',
   initialState,

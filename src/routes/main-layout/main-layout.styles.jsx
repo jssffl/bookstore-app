@@ -3,10 +3,10 @@ import styled from 'styled-components/macro'
 export const Container = styled.div`
   position: relative;
   display: grid;
-  grid-template-rows: 150px min-content 200px;
+  grid-template-rows: 150px;
   grid-template-columns:
     [full-start] 1fr
-    [center-start] repeat(9, [col-start] minmax(min-content, 160px) [col-end])
+    [center-start] repeat(8, [col-start] minmax(40px, 160px) [col-end])
     [center-end] 1fr [full-end];
 
   /* grid-template-columns:

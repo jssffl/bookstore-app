@@ -4,7 +4,12 @@ export const GlobalStyle = createGlobalStyle`
     :root {
         --color-primary: #10bbd5;
         --color-blue-dark:#001950;
+        --color-pink: #ff0072;
         --color-grey-dark: #444;
+
+        --color-grey-light-3: #cacaca;
+        --color-grey-light-2:#d0d0d0;
+        --color-grey-light-1:#f0f0f0;
     }
 
     html {
@@ -22,8 +27,8 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Noto Sans', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        background-color: #f0f0f0;
-        color: #444;
+        background-color: #ededef;
+        color: var(--color-grey-dark);
 
       
     }
@@ -54,10 +59,9 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     a,
-    a:hover,
-    a:focus {
+    a:hover {
       text-decoration: none;
-      color: var(--color-grey-dark);
+     
     }
 
     .btn,

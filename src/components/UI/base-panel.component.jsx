@@ -1,4 +1,4 @@
-import { PanelCard } from './base-panel.style'
+import { PanelCard } from './base-panel.styles'
 
 const BasePanel = ({ children }) => {
   return <PanelCard>{children}</PanelCard>

@@ -16,7 +16,9 @@ import {
 import { fetchBooksAsync } from './store/books/books.slice'
 import BookCategory from './routes/shop/book-category.component'
 import BookBestsellers from './routes/shop/book-bestsellers.components'
-
+import BookSeries from './routes/shop/book-series.component'
+import BookLanguage from './routes/shop/book-language.component'
+import Cart from './routes/cart/cart.component.jsx'
 function App() {
   const dispatch = useDispatch()
   useEffect(() => {
@@ -41,8 +43,12 @@ function App() {
         <Route path='/' element={<MainLayout />}>
           <Route index element={<Home />} />
           <Route path='/account/login' element={<Authentication />} />
+          <Route path='/cart' element={<Cart />} />
           <Route path='/bestsellers' element={<BookBestsellers />} />
-          <Route path='/:category' element={<BookCategory />} />
+          <Route path='/shop/:bookId' element={<Home />} />
+          <Route path='/lang/:lang' element={<BookLanguage />} />
+          <Route path='/series/:series' element={<BookSeries />} />
+          <Route path='/category/:category' element={<BookCategory />} />
         </Route>
       </Routes>
     </Suspense>

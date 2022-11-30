@@ -69,7 +69,7 @@ const SearchForm = () => {
   }
 
   const navigateToBookPage = (book) => {
-    navigate(`/shop/${book.category}/${book.id}`)
+    navigate(`/shop//${book.id}`)
   }
 
   const resetSearch = () => {

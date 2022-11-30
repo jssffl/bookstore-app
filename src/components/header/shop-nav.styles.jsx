@@ -67,6 +67,7 @@ export const ShopMenu = styled.ul`
     height: 40px;
     padding: 0;
     cursor: pointer;
+    color: var(--color-grey-dark);
   }
 
   ${ToggleDropDown} {
@@ -90,7 +91,7 @@ export const ShopMenu = styled.ul`
     top: 100%;
     left: 20px;
     background-color: #fff;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-grey-light-3);
     border-top: 5px solid var(--color-primary);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     z-index: 999;
@@ -110,7 +111,7 @@ export const ShopMenu = styled.ul`
       }
 
       &:not(:last-child) {
-        border-right: 1px solid #cacaca;
+        border-right: 1px solid var(--color-grey-light-3);
       }
     }
   }
@@ -121,7 +122,7 @@ export const ShopMenu = styled.ul`
     padding: 0;
     font-size: 14px;
     font-weight: 700;
-    border-bottom: 1px solid #cacaca;
+    border-bottom: 1px solid var(--color-grey-light-3);
     margin: 0 0 5px 10px;
   }
 
@@ -137,7 +138,7 @@ export const ShopMenu = styled.ul`
       font-size: 14px;
 
       &:hover {
-        background-color: #f0f0f0;
+        background-color: var(--color-grey-light-1);
       }
     }
   }
@@ -151,8 +152,11 @@ export const ShopMenu = styled.ul`
 
     > li > a,
     > li > span,
+    > li > a:hover,
+    > li > span:hover,
     ${ToggleSubDropdown} {
       margin: 0;
+      border-bottom: 1px solid var(--color-grey-light-1);
     }
 
     span,
@@ -163,8 +167,8 @@ export const ShopMenu = styled.ul`
       padding: 0 10px;
       background-color: #fff;
       width: 100%;
-
-      border-bottom: 1px solid #f0f0f0;
+      color: var(--color-grey-dark);
+      border-bottom: 1px solid var(--color-grey-light-1);
     }
 
     ${ToggleSubDropdown} {

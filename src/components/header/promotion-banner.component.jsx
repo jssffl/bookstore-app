@@ -1,13 +1,9 @@
-import {
-  PrimaryBanner,
-  SecondaryBanner,
-  PromotionBannerWrap,
-} from './promotion-banner.style'
+import { PrimaryBanner, SecondaryBanner } from './promotion-banner.style'
 import promotionIcon from '../../assets/promotion-icon.png'
 
 const PromotionBanner = () => {
   return (
-    <PromotionBannerWrap>
+    <>
       <PrimaryBanner to='/'>
         Free
         <br /> delivery
@@ -19,7 +15,7 @@ const PromotionBanner = () => {
           <span>Click Here &rarr;</span>
         </p>
       </SecondaryBanner>
-    </PromotionBannerWrap>
+    </>
   )
 }
 

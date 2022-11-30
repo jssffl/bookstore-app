@@ -110,7 +110,7 @@ export const FilteredBooksContainer = styled.div`
   background-color: white;
   border-radius: 3px;
   z-index: 999;
-  border: 1px solid #d3d3d3;
+  border: 1px solid var(--color-grey-light-3);
   border-top: none;
   transform: translateY(8px);
   width: calc(100% - 100px);
@@ -127,7 +127,7 @@ export const FilteredBooksContainer = styled.div`
 export const FilteredBookContainer = styled.div`
   display: flex;
   height: 75px;
-  border-bottom: 1px solid #d3d3d3;
+  border-bottom: 1px solid var(--color-grey-light-3);
   cursor: pointer;
 
   &:last-child {

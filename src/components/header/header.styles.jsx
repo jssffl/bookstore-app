@@ -83,6 +83,16 @@ export const UserNavWrap = styled.div`
 `
 export const UserNavContainer = styled.div`
   ${centerContainer}
+  display: flex;
+
+  position: relative;
+
+  @media screen and (max-width: 900px) {
+    justify-content: flex-end;
+  }
+`
+export const DeskWrap = styled.div`
+  flex: 1;
 
   @media screen and (max-width: 900px) {
     display: none;
@@ -102,7 +112,7 @@ export const ShopNavContainer = styled.div`
 `
 
 export const PromotionBannerWrap = styled.div`
-  ${centerContainer};
+  height: 44px;
   position: absolute;
   top: 0;
   left: 50%;
@@ -125,6 +135,7 @@ export const PromotionBannerWrap = styled.div`
   }
 
   @media screen and (max-width: 900px) {
+    ${centerContainer};
     width: 100%;
     position: relative;
     transform: translateX(0);

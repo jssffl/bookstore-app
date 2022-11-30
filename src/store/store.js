@@ -2,14 +2,14 @@ import { configureStore } from '@reduxjs/toolkit'
 import { combineReducers, applyMiddleware } from 'redux'
 import { userReducer } from './user/user.slice'
 import { booksReducer } from './books/books.slice'
-
+import { cartReducer } from './cart/cart.slice'
 import logger from 'redux-logger'
 import thunk from 'redux-thunk'
 
 export const reducers = combineReducers({
   user: userReducer,
   books: booksReducer,
-  //   cart: cartReducer,
+  cart: cartReducer,
 })
 
 const middlewares = [

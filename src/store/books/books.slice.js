@@ -21,7 +21,7 @@ const booksSlice = createSlice({
       })
 
       .addCase(fetchBooksAsync.fulfilled, (state, { payload }) => {
-        state.books = [...payload]
+        state.books = payload || []
         state.isLoading = false
       })
 

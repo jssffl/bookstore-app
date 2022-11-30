@@ -11,7 +11,7 @@ export const selectCategories = createSelector([selectBooks], (books) =>
         acc[category].push(item)
 
         return acc
-      }, [])
+      }, {})
     : []
 )
 
@@ -26,10 +26,23 @@ export const selectSeries = createSelector([selectBooks], (books) =>
         }
 
         return acc
-      }, [])
+      }, {})
     : []
 )
 
 export const selectBestsellers = createSelector([selectBooks], (books) =>
-  books.filter((item) => item.bestsellers === true)
+  books ? books.filter((item) => item.bestsellers === true) : []
+)
+
+export const selectLanguage = createSelector([selectBooks], (books) =>
+  books
+    ? books.reduce((acc, item) => {
+        const { language } = item
+
+        acc[language] = acc[language] || []
+        acc[language].push(item)
+
+        return acc
+      }, {})
+    : []
 )
