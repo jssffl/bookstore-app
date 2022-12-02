@@ -5,11 +5,11 @@ export const CheckoutWrap = styled.div`
   display: flex;
   grid-column: center-start / center-end;
   margin: 10px;
-  font-size: 12px;
+  font-size: 14px;
   color: #333;
 
   h2 {
-    font-size: 16px;
+    font-size: 18px;
   }
 `
 
@@ -21,22 +21,26 @@ export const PaymentInfo = styled.div`
 export const Banner = styled.div`
   background-color: var(--color-primary);
   width: 100%;
-  padding: 10px;
-  margin-bottom: 5px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
   border-radius: 5px;
   color: #fff;
-  font-size: 14px;
+  font-size: 18px;
 `
 export const Title = styled.span`
   /* ${multiEllipsis} */
+  padding-bottom: 5px;
 `
 
 export const UserInfo = styled.div`
   width: 65%;
-  div {
-    /* display: flex;
-    flex-direction: column; */
+  padding: 20px 10px;
 
+  h2 {
+    margin-bottom: 15px;
+  }
+
+  div {
     margin: 10px 0;
   }
 
@@ -59,23 +63,27 @@ export const UserInfo = styled.div`
 
 export const OrderInfo = styled.div`
   flex: 1;
-  height: 300px;
   background-color: #fff;
-  font-size: 12px;
+  margin-bottom: 5px;
+
+  h2 {
+    padding: 10px;
+    background-color: var(--color-pink);
+    color: #fff;
+  }
 
   dl {
     width: 100%;
     display: flex;
     margin: 0;
-    padding: 0;
     justify-content: space-between;
-    padding: 5px 0;
+    padding: 15px 10px;
     border-bottom: 1px solid var(--color-grey-light-1);
   }
 
   dt {
     width: 80%;
-
+    padding-right: 5px;
     span {
       display: block;
       line-height: 1.1;
@@ -85,4 +93,12 @@ export const OrderInfo = styled.div`
   dd {
     margin: 0;
   }
+`
+export const Total = styled.dd`
+  color: var(--color-pink);
+  font-weight: 700;
+`
+
+export const Summary = styled.div`
+  font-weight: 700;
 `

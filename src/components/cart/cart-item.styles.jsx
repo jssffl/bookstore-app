@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import { multiEllipsis } from '../book/book-card.styles'
+
 export const ImgWrap = styled.div`
   width: 100%;
 

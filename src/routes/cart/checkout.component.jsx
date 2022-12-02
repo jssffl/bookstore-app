@@ -11,6 +11,8 @@ import {
   CheckoutWrap,
   UserInfo,
   Title,
+  Total,
+  Summary,
 } from './checkout.styles'
 import { BlockWrap } from '../../components/UI/block-wrap.styles'
 
@@ -60,20 +62,22 @@ const Checkout = () => {
             <dd>US${quantity * price}</dd>
           </dl>
         ))}
-        <dl>
-          <dt>Sub-total</dt>
-          <dd>US${cartTotal}</dd>
-        </dl>
+        <Summary>
+          <dl>
+            <dt>Sub-total</dt>
+            <dd>US${cartTotal}</dd>
+          </dl>
 
-        <dl>
-          <dt>Delivery</dt>
-          <dd>FREE</dd>
-        </dl>
+          <dl>
+            <dt>Delivery</dt>
+            <dd>FREE</dd>
+          </dl>
 
-        <dl>
-          <dt>Total</dt>
-          <dd>US${cartTotal}</dd>
-        </dl>
+          <dl>
+            <dt>Total</dt>
+            <Total>US${cartTotal}</Total>
+          </dl>
+        </Summary>
       </OrderInfo>
     </CheckoutWrap>
   )

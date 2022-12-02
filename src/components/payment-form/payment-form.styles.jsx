@@ -3,8 +3,10 @@ import CustomButton from '../UI/button.component'
 
 export const Form = styled.form`
   width: 65%;
+  padding: 20px 10px;
+
   h2 {
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 15px;
   }
 `

@@ -1,17 +1,16 @@
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { ReactComponent as GarbageCan } from '../../assets/garbage-trash.svg'
 import {
   addItemToCart,
   removeItemFromCart,
   clearItemFromCart,
 } from '../../store/cart/cart.slice'
-import { selectCartItems } from '../../store/cart/cart.selector'
+
 import {
   ImgWrap,
   CartItemWrap,
   PriceWrap,
   QtyButton,
-  QtyWrap,
   InfoWrap,
   InfoCheckoutWrap,
   AvailableText,

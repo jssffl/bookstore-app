@@ -13,8 +13,8 @@ import { BlockWrap } from '../../components/UI/block-wrap.styles'
 import BaseCarousel from '../../components/UI/base-carousel.component'
 import BookCard from '../../components/book/book-card.component'
 
-import featuredImgSm from '../../assets/christmas-sm.png'
-import featuredImgLg from '../../assets/christmas-lg.png'
+import featuredImgSm from '../../assets/christmas-sm.webp'
+import featuredImgLg from '../../assets/christmas-lg.webp'
 import blogImg from '../../assets/sidebar-img.jpg'
 import clubImg from '../../assets/book-club.webp'
 

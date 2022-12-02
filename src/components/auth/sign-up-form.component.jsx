@@ -1,6 +1,5 @@
 import { useState } from 'react'
-// import { useDispatch, useSelector } from 'react-redux'
-// import { signUpStart } from '../../store/user/user.action'
+
 import FormInput from '../UI/form-input.component'
 import CustomButton from '../UI/button.component'
 import {
@@ -9,17 +8,11 @@ import {
   SignUpContainer,
 } from './sign-up-form.styles'
 
-// import { useNavigate } from 'react-router-dom'
-// import {
-//   selectCurrentUser,
-//   selectUserError,
-// } from '../../store/user/user.selector'
-
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from '../../utils/firebase/firebase.utils'
-import { useEffect } from 'react'
+
 const defaultFormFields = {
   displayName: '',
   email: '',
@@ -29,8 +22,6 @@ const defaultFormFields = {
 const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields)
   const { displayName, email, password } = formFields
-  // const dispatch = useDispatch()
-  // const error = useSelector(selectUserError)
 
   const [message, setMessage] = useState(null)
 

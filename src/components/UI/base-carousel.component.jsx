@@ -7,21 +7,11 @@ import {
   CarouselRightButton,
 } from './base-carousel.styles'
 
-const CustomRightArrow = ({ onClick, ...rest }) => {
-  const {
-    onMove,
-    carouselState: { currentSlide, deviceType },
-  } = rest
-  // onMove means if dragging or swiping in progress.
+const CustomRightArrow = ({ onClick }) => {
   return <CarouselRightButton onClick={() => onClick()} />
 }
 
-const CustomLeftArrow = ({ onClick, ...rest }) => {
-  const {
-    onMove,
-    carouselState: { currentSlide, deviceType },
-  } = rest
-  // onMove means if dragging or swiping in progress.
+const CustomLeftArrow = ({ onClick }) => {
   return <CarouselLeftButton onClick={() => onClick()} />
 }
 
@@ -31,7 +21,6 @@ const BaseCarousel = ({ children }) => {
       breakpoint: { max: 3000, min: 1200 },
       items: 6,
     },
-
     desktop: {
       breakpoint: { max: 1200, min: 1000 },
       items: 5,
@@ -40,7 +29,6 @@ const BaseCarousel = ({ children }) => {
       breakpoint: { max: 1000, min: 800 },
       items: 4,
     },
-
     mobile: {
       breakpoint: { max: 800, min: 450 },
       items: 3,

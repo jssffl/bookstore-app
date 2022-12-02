@@ -1,10 +1,5 @@
 import { useState } from 'react'
-// import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-// import {
-//   googleSignInStart,
-//   emailSignInStart,
-// } from '../../store/user/user.action'
 import FormInput from '../UI/form-input.component'
 import CustomButton from '../UI/button.component'
 import {
@@ -12,7 +7,6 @@ import {
   SignInContainer,
   MessageBanner,
 } from './sign-in-form.styles'
-// import { selectUserError } from '../../store/user/user.selector'
 
 import {
   signInAuthUserWithEmailAndPassword,
@@ -29,21 +23,17 @@ const SignInForm = () => {
   const { email, password } = formFields
   const [error, setError] = useState(null)
 
-  // const dispatch = useDispatch()
   const navigate = useNavigate()
   const resetFormField = () => {
     setFormFields(defaultFormFields)
   }
 
-  // let error = useSelector(selectUserError)
-
   const submitHandler = async (e) => {
     e.preventDefault()
 
     try {
-      const user = await signInAuthUserWithEmailAndPassword(email, password)
+      await signInAuthUserWithEmailAndPassword(email, password)
 
-      // dispatch(emailSignInStart(email, password))
       resetFormField()
       navigate('/')
 
@@ -53,7 +43,7 @@ const SignInForm = () => {
 
       switch (error.code) {
         case 'auth/wrong-password':
-          setError('Incorrent  Email or password ')
+          setError('Incorrect  Email or password ')
           break
         case 'auth/user-not-found':
           setError('No user associated with this email')

@@ -48,7 +48,7 @@ const SearchForm = () => {
     }
 
     const bookItems = []
-    books.map((item) => {
+    books.forEach((item) => {
       if (
         item.title.toLocaleLowerCase().includes(keyword) ||
         item.author.toLocaleLowerCase().includes(keyword)

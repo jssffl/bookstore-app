@@ -45,7 +45,7 @@ export const Message = styled.p`
 export const CartContainer = styled.div`
   grid-column: center-start / center-end;
   padding: 20px 20px 10px 20px;
-  min-height: 60vh;
+
   margin: 10px;
   background-color: #fff;
 
@@ -73,6 +73,7 @@ export const Total = styled.div`
   flex-direction: column;
   background-color: #fff;
   font-size: 16px;
+  height: 180px;
 
   dl {
     display: flex;
