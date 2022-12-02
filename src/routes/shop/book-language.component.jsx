@@ -8,7 +8,13 @@ import SideBarWrap from '../../components/UI/sidebar.component'
 import MainContentWrap from '../../components/UI/main-content.component'
 import BaseBanner from '../../components/UI/base-banner.component'
 
-import { ProductsWrap, Sidebar, Heading, BaseLink } from './book-shop.styles.'
+import {
+  ProductsWrap,
+  Sidebar,
+  Heading,
+  BaseLink,
+  BannerTitle,
+} from './book-shop.styles.'
 import { ReactComponent as ChevronRight } from '../../assets/chevron-left.svg'
 
 const BookLanguage = () => {
@@ -32,10 +38,7 @@ const BookLanguage = () => {
             {bookLanguage &&
               Object.keys(bookLanguage).map((title) => (
                 <li key={title}>
-                  <BaseLink
-                    to={'/category/' + title}
-                    active={+(title === lang)}
-                  >
+                  <BaseLink to={'/lang/' + title} active={+(title === lang)}>
                     {title}
                   </BaseLink>
                 </li>
@@ -44,7 +47,11 @@ const BookLanguage = () => {
         </Sidebar>
       </SideBarWrap>
       <MainContentWrap>
-        <BaseBanner>Featured {lang}</BaseBanner>
+        <BaseBanner>
+          <BannerTitle>
+            Featured <span>{lang}</span>
+          </BannerTitle>
+        </BaseBanner>
         <ProductsWrap>
           {products &&
             products.map((item) => <BookCard item={item} key={item.id} />)}

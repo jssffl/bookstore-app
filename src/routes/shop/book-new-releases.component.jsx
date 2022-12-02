@@ -1,25 +1,24 @@
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
-
 import BookCard from '../../components/book/book-card.component'
 
 import BaseBanner from '../../components/UI/base-banner.component'
-import { selectBestsellers } from '../../store/books/books.selector'
-import { ProductsWrap, ContentWrap, BannerTitle } from './book-shop.styles.'
+import { selectNewReleases } from '../../store/books/books.selector'
+import { ContentWrap, ProductsWrap, BannerTitle } from './book-shop.styles.'
 
-const BookBestsellers = () => {
-  const bookBestsellers = useSelector(selectBestsellers)
-  const [products, setProducts] = useState(bookBestsellers)
+const BookNewReleases = () => {
+  const bookNewReleases = useSelector(selectNewReleases)
+  const [products, setProducts] = useState(bookNewReleases)
 
   useEffect(() => {
-    setProducts(bookBestsellers)
-  }, [bookBestsellers])
+    setProducts(bookNewReleases)
+  }, [bookNewReleases])
 
   return (
     <>
       <ContentWrap>
         <BaseBanner>
-          <BannerTitle>Bestsellers</BannerTitle>
+          <BannerTitle>News Releases</BannerTitle>
         </BaseBanner>
         <ProductsWrap>
           {products &&
@@ -30,4 +29,4 @@ const BookBestsellers = () => {
   )
 }
 
-export default BookBestsellers
+export default BookNewReleases

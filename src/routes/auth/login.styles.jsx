@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
-export const AuthContainer = styled.div`
+export const AuthWrap = styled.div`
   grid-column: center-start / center-end;
   width: 900px;
   height: 500px;

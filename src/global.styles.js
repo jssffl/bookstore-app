@@ -29,7 +29,9 @@ export const GlobalStyle = createGlobalStyle`
         -moz-osx-font-smoothing: grayscale;
         background-color: #ededef;
         color: var(--color-grey-dark);
-       
+   
+    height: 100%;
+    
       
       
     }

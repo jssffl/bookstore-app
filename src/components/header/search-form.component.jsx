@@ -14,6 +14,8 @@ import { useEffect, useState } from 'react'
 import { ReactComponent as SearchIcon } from '../../assets/magnifying-glass.svg'
 
 import { useLocation, useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { selectBooks } from '../../store/books/books.selector.js'
 
 const defaultSearchField = {
   searchString: '',
@@ -25,7 +27,7 @@ const SearchForm = () => {
   const [searchField, setSearchField] = useState(defaultSearchField)
   const { searchString, filteredBooks } = searchField
   const [isLoading, setIsLoading] = useState(false)
-
+  const books = useSelector(selectBooks)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -45,16 +47,17 @@ const SearchForm = () => {
       return
     }
 
-    // const bookItems = []
-    // category.map(({ category, items }) =>
-    //   items.map((item) => {
-    //     if (item.title.toLocaleLowerCase().includes(keyword)) {
-    //       bookItems.push(item)
-    //     }
-    //   })
-    // )
+    const bookItems = []
+    books.map((item) => {
+      if (
+        item.title.toLocaleLowerCase().includes(keyword) ||
+        item.author.toLocaleLowerCase().includes(keyword)
+      ) {
+        bookItems.push(item)
+      }
+    })
 
-    // setSearchField((prevState) => ({ ...prevState, filteredBooks: bookItems }))
+    setSearchField((prevState) => ({ ...prevState, filteredBooks: bookItems }))
     setIsLoading(false)
   }
 
@@ -69,7 +72,7 @@ const SearchForm = () => {
   }
 
   const navigateToBookPage = (book) => {
-    navigate(`/shop//${book.id}`)
+    navigate(`/shop/${book.id}`)
   }
 
   const resetSearch = () => {

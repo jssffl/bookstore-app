@@ -6,7 +6,13 @@ import SideBarWrap from '../../components/UI/sidebar.component'
 import MainContentWrap from '../../components/UI/main-content.component'
 import BaseBanner from '../../components/UI/base-banner.component'
 import { selectSeries } from '../../store/books/books.selector'
-import { ProductsWrap, Sidebar, Heading, BaseLink } from './book-shop.styles.'
+import {
+  ProductsWrap,
+  Sidebar,
+  Heading,
+  BaseLink,
+  BannerTitle,
+} from './book-shop.styles.'
 import { ReactComponent as ChevronRight } from '../../assets/chevron-left.svg'
 
 const BookSeries = () => {
@@ -23,7 +29,7 @@ const BookSeries = () => {
       <SideBarWrap>
         <Sidebar>
           <Heading to='/'>
-            <ChevronRight width='25' heigh='25' />
+            <ChevronRight width='25' heigh='20' fill='#444' />
             <h3>Back to Homepage</h3>
           </Heading>
           <ul>
@@ -39,7 +45,9 @@ const BookSeries = () => {
         </Sidebar>
       </SideBarWrap>
       <MainContentWrap>
-        <BaseBanner>{series.split('-').join(' ')}</BaseBanner>
+        <BaseBanner>
+          <BannerTitle>{series.split('-').join(' ')}</BannerTitle>
+        </BaseBanner>
         <ProductsWrap>
           {products &&
             products.map((item) => <BookCard item={item} key={item.id} />)}

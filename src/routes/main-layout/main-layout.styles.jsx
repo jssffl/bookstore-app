@@ -3,17 +3,16 @@ import styled from 'styled-components/macro'
 export const Container = styled.div`
   position: relative;
   display: grid;
-  grid-template-rows: 150px;
+  grid-template-rows: 150px 1fr auto;
   grid-template-columns:
     [full-start] 1fr
     [center-start] repeat(10, [col-start] minmax(40px, 144px) [col-end])
     [center-end] 1fr [full-end];
+  min-height: 100vh;
 
-  /* grid-template-columns:
-[full-start] 1fr
-[center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
-[center-end] 1fr [full-end]; */
-
+  @media screen and (max-width: 700px) {
+    grid-template-rows: 150px min-content 1fr auto;
+  }
   ::after {
     content: '';
     display: block;

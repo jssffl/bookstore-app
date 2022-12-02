@@ -46,3 +46,7 @@ export const selectLanguage = createSelector([selectBooks], (books) =>
       }, {})
     : []
 )
+
+export const selectNewReleases = createSelector([selectBooks], (books) =>
+  books ? books.filter((item) => item.publicationDate.slice(-4) > 2021) : []
+)

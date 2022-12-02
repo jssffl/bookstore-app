@@ -8,7 +8,13 @@ import SideBarWrap from '../../components/UI/sidebar.component'
 import MainContentWrap from '../../components/UI/main-content.component'
 import BaseBanner from '../../components/UI/base-banner.component'
 
-import { ProductsWrap, Sidebar, Heading, BaseLink } from './book-shop.styles.'
+import {
+  ProductsWrap,
+  Sidebar,
+  Heading,
+  BaseLink,
+  BannerTitle,
+} from './book-shop.styles.'
 import { ReactComponent as ChevronRight } from '../../assets/chevron-left.svg'
 
 const BookCategory = () => {
@@ -44,7 +50,12 @@ const BookCategory = () => {
         </Sidebar>
       </SideBarWrap>
       <MainContentWrap>
-        <BaseBanner>Featured {category}</BaseBanner>
+        <BaseBanner>
+          <BannerTitle>
+            Featured
+            <span>{category}</span>{' '}
+          </BannerTitle>
+        </BaseBanner>
         <ProductsWrap>
           {products &&
             products.map((item) => <BookCard item={item} key={item.id} />)}

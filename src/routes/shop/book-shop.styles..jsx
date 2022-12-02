@@ -11,14 +11,17 @@ export const Sidebar = styled.div`
   height: 500px;
   background-color: #fff;
   padding: 15px 10px;
-  text-transform: capitalize;
 
   a {
     color: var(--color-grey-dark);
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
   }
   h3 {
     font-size: 18px;
-    transform: translateY(-3px);
+    transform: translateY(-1px);
   }
 
   ul {
@@ -31,6 +34,17 @@ export const Sidebar = styled.div`
       border-bottom: 1px solid #f0f0f0;
     }
   }
+
+  @media screen and (max-width: 700px) {
+    h3 {
+      font-size: 15px;
+      transform: translateY(1px);
+    }
+
+    ul {
+      margin: 0 5px;
+    }
+  }
 `
 
 export const BaseLink = styled(Link)`
@@ -41,11 +55,43 @@ export const BaseLink = styled(Link)`
   height: 35px;
 
   font-weight: ${({ active }) => (active ? '700' : '400')};
+
+  @media screen and (max-width: 700px) {
+    font-size: 13px;
+    line-height: 30px;
+    height: 30px;
+  }
 `
 
 export const ProductsWrap = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min-context, 1fr));
+  grid-template-columns: repeat(auto-fit, 140px);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
   background-color: #fff;
-  padding: 5px 10px;
+  padding: 5px 20px;
+`
+
+export const ContentWrap = styled.div`
+  grid-column: center-start/ center-end;
+  margin: 10px 20px;
+`
+
+export const BannerTitle = styled.h2`
+  text-transform: capitalize;
+  line-height: 60px;
+  font-size: 24px;
+  font-weight: 700;
+
+  span::first-letter {
+    text-transform: capitalize;
+  }
+
+  @media screen and (max-width: 1000px) {
+    font-size: 22px;
+  }
+
+  @media screen and (max-width: 700px) {
+    font-size: 20px;
+  }
 `

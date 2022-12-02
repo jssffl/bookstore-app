@@ -21,7 +21,7 @@ import CartIcon from '../cart/cart-icon.component'
 
 const Header = () => {
   return (
-    <TheHeader>
+    <TheHeader id='nav-top'>
       <UserNavWrap>
         <UserNavContainer>
           <DeskWrap>

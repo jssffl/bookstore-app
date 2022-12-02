@@ -1,20 +1,6 @@
 import styled from 'styled-components/macro'
-import chevronRight from '../../assets/chevron-md-right.svg'
-import chevronLeft from '../../assets/chevron-md-left.svg'
-// export const HomeWrap = styled.div`
-//   grid-column: center-start/ center-end;
-// `
-
-// export const BlockWrap = styled.div`
-//   width: 100%;
-//   height: 280px;
-//   background-color: #fff;
-
-//   /* padding: 5px 10px; */
-//   box-shadow: 0 2px 6px rgba(0, 0, 0 0.3);
-//   margin-right: 5px;
-//   margin-bottom: 5px;
-// `
+import { MainContentWrap } from '../../components/UI/main.content.styles'
+import { SideBar } from '../../components/UI/sidebar.styles'
 
 export const BannerWrap = styled.div`
   grid-column: 1 /-1;
@@ -44,7 +30,6 @@ export const BannerWrap = styled.div`
     width: 100%;
     height: 100%;
     z-index: 10;
-    /* background-image: linear-gradient(to right bottom, #10bbd569, #00195069); */
   }
 
   img {
@@ -69,4 +54,77 @@ export const HeadingSecondary = styled.h2`
   width: 100%;
   border-bottom: 1px solid var(--color-grey-light-1);
   padding-bottom: 5px;
+`
+
+export const BlogWrap = styled.div`
+  img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    display: block;
+  }
+
+  p {
+    font-size: 14px;
+    padding: 15px 0;
+  }
+
+  @media screen and (max-width: 700px) {
+    text-align: center;
+    img {
+      height: 180px;
+    }
+    p {
+      font-size: 13px;
+      padding: 8px 0;
+    }
+  }
+`
+
+export const ClubWrap = styled.div`
+  img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    object-position: right;
+    overflow: hidden;
+    display: block;
+  }
+
+  p {
+    font-size: 14px;
+    padding: 15px 0;
+  }
+
+  @media screen and (max-width: 700px) {
+    text-align: center;
+    img {
+      height: 180px;
+    }
+
+    p {
+      font-size: 13px;
+      padding: 8px 0;
+    }
+  }
+`
+
+export const HomeSideBar = styled(SideBar)`
+  @media screen and (max-width: 700px) {
+    grid-column: center-start/ center-end;
+    grid-row: 3/4;
+    display: flex;
+    padding: 0;
+    margin: 10px 20px;
+    height: 220px;
+  }
+`
+export const HomeContentWrap = styled(MainContentWrap)`
+  @media screen and (max-width: 700px) {
+    grid-column: center-start/ center-end;
+    padding: 0;
+    margin: 10px 20px;
+  }
 `

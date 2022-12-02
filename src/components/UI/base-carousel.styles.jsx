@@ -23,11 +23,13 @@ export const CarouselWrap = styled.div`
   &::before {
     left: 0;
     z-index: 2;
+    transform: translateX(-10px);
   }
 
   &::after {
     right: 0;
     z-index: 2;
+    transform: translateX(10px);
   }
 `
 

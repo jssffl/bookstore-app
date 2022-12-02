@@ -8,13 +8,17 @@ export const multiEllipsis = `
   overflow: hidden;
 `
 
+export const singleEllipsis = `
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+`
 export const BookCardWrap = styled.div`
   width: 140px;
   height: 280px;
   font-size: 14px;
   padding: 5px 10px;
-  /* z-index: 1; */
-  /* margin: 0px 5px 5px 0; */
 
   button {
     width: 100%;
@@ -36,7 +40,7 @@ export const ImgWrap = styled.div`
 `
 
 export const InfoWrap = styled.div`
-  height: 90px;
+  height: 95px;
   width: 100%;
 
   /* background-color: #fcfcfc; */
@@ -58,6 +62,7 @@ export const InfoWrap = styled.div`
 
 export const AuthorWrap = styled.p`
   font-size: 10px;
+  ${singleEllipsis}
 `
 
 export const PriceWrap = styled.p`

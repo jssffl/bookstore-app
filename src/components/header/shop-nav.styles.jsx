@@ -38,7 +38,7 @@ export const SubDropdown = styled.ul`
 
 export const ShopMenu = styled.ul`
   display: flex;
-  text-transform: capitalize;
+
   position: relative;
 
   > li:first-child {

@@ -8,7 +8,10 @@ import {
   Dropdown,
 } from './shop-nav.styles'
 import { useSelector } from 'react-redux'
-import { selectCategories } from '../../store/books/books.selector'
+import {
+  selectCategories,
+  selectSeries,
+} from '../../store/books/books.selector'
 
 const ShopNav = () => {
   const [categoriesList, setCategoriesList] = useState(false)
@@ -19,6 +22,7 @@ const ShopNav = () => {
   const [deviceSize, setDeviceSize] = useState(window.innerWidth)
   const { pathname } = useLocation()
   const categories = useSelector(selectCategories)
+  const series = useSelector(selectSeries)
 
   const hoverEnterSpanHandler = () => {
     if (deviceSize < 900) return
@@ -99,8 +103,12 @@ const ShopNav = () => {
             </ToggleSubDropdown>
             <SubDropdown open={bestsellingList}>
               <li>
-                <Link to='/series/jin-yong'>Jin Yong</Link>
-                <Link to='/series/harry-potter'>Harry Potter</Link>
+                {series &&
+                  Object.keys(series).map((title) => (
+                    <Link key={title} to={'/series/' + title}>
+                      {title.split('-').join(' ')}
+                    </Link>
+                  ))}
               </li>
             </SubDropdown>
           </li>
@@ -122,7 +130,7 @@ const ShopNav = () => {
       </li>
 
       <li>
-        <Link to='/'>News Releases</Link>
+        <Link to='/new-releases'>New Releases</Link>
         <Link to='/bestsellers'>Bestsellers</Link>
       </li>
     </ShopMenu>

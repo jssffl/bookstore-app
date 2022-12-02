@@ -12,10 +12,10 @@ const UserNav = () => {
     <UserMenu>
       <li>
         <Link to='/'>Home</Link>
-        <Link to='/'>Help</Link>
+        <Link to='#'>Help</Link>
       </li>
       <li>
-        <Link to='/'>Order status</Link>
+        {currentUser && <Link to='/account'>My Account</Link>}
         {!currentUser && <Link to='/account/login'>Sign in</Link>}
         {currentUser && (
           <Link to='/' onClick={signOutUser}>

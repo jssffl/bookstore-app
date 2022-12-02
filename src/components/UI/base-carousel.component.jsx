@@ -1,7 +1,6 @@
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
-import { useSelector } from 'react-redux'
-import { selectBestsellers } from '../../store/books/books.selector'
+
 import {
   CarouselWrap,
   CarouselLeftButton,
@@ -27,9 +26,8 @@ const CustomLeftArrow = ({ onClick, ...rest }) => {
 }
 
 const BaseCarousel = ({ children }) => {
-  const bestsellers = useSelector(selectBestsellers)
   const responsive = {
-    LargeDesktop: {
+    largeDesktop: {
       breakpoint: { max: 3000, min: 1200 },
       items: 6,
     },
@@ -38,16 +36,17 @@ const BaseCarousel = ({ children }) => {
       breakpoint: { max: 1200, min: 1000 },
       items: 5,
     },
-    LargeTablet: {
+    tablet: {
       breakpoint: { max: 1000, min: 800 },
       items: 4,
     },
-    tablet: {
-      breakpoint: { max: 800, min: 600 },
+
+    mobile: {
+      breakpoint: { max: 800, min: 450 },
       items: 3,
     },
-    mobile: {
-      breakpoint: { max: 600, min: 0 },
+    smallMobile: {
+      breakpoint: { max: 450, min: 0 },
       items: 2,
     },
   }
