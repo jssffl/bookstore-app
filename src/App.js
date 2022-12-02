@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import { Suspense, useEffect } from 'react'
 import { GlobalStyle } from './global.styles'
 import Spinner from './components/UI/spinner.component'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setCurrentUser } from './store/user/user.slice'
 
 import Home from './routes/home/home.component'
@@ -19,6 +19,7 @@ import BookBestsellers from './routes/shop/book-bestsellers.components'
 import BookSeries from './routes/shop/book-series.component'
 import BookLanguage from './routes/shop/book-language.component'
 import Cart from './routes/cart/cart.component.jsx'
+import Checkout from './routes/cart/checkout.component'
 function App() {
   const dispatch = useDispatch()
   useEffect(() => {
@@ -44,6 +45,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path='/account/login' element={<Authentication />} />
           <Route path='/cart' element={<Cart />} />
+          <Route path='/cart/checkout' element={<Checkout />} />
           <Route path='/bestsellers' element={<BookBestsellers />} />
           <Route path='/shop/:bookId' element={<Home />} />
           <Route path='/lang/:lang' element={<BookLanguage />} />

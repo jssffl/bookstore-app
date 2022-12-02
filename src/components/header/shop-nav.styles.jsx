@@ -39,13 +39,14 @@ export const SubDropdown = styled.ul`
 export const ShopMenu = styled.ul`
   display: flex;
   text-transform: capitalize;
+  position: relative;
 
   > li:first-child {
     display: none;
   }
 
   > li > a {
-    margin: 0 15px;
+    margin: 0 30px 0 0;
 
     &:hover {
       border-bottom: 2px solid #000;
@@ -53,7 +54,8 @@ export const ShopMenu = styled.ul`
   }
 
   > li > span {
-    margin: 0 40px 0 10px;
+    margin: 0 20px 0 10px;
+    padding-right: 30px;
 
     &:hover {
       border-bottom: 2px solid #000;
@@ -80,7 +82,7 @@ export const ShopMenu = styled.ul`
       position: absolute;
       right: 0;
       top: 50%;
-      transform: translate(30px, -50%);
+      transform: translate(0, -50%);
     }
   }
 
@@ -89,7 +91,7 @@ export const ShopMenu = styled.ul`
     height: 200px;
     position: absolute;
     top: 100%;
-    left: 20px;
+    left: 10px;
     background-color: #fff;
     border: 1px solid var(--color-grey-light-3);
     border-top: 5px solid var(--color-primary);

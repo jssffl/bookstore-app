@@ -54,15 +54,14 @@ const CartItem = ({ cartItem }) => {
         </AvailableText>
       </InfoWrap>
       <InfoCheckoutWrap>
-        <QtyWrap>
-          <QtyButton>
-            <span onClick={removeItemHandler}>-</span>
-            <p>{quantity}</p>
-            <span onClick={addItemHandler}>+</span>
-          </QtyButton>
-          <PriceWrap>US${price * quantity}</PriceWrap>
-          <GarbageCan onClick={clearItemHandler} />
-        </QtyWrap>
+        <QtyButton>
+          <span onClick={removeItemHandler}>-</span>
+          <p>{quantity}</p>
+          <span onClick={addItemHandler}>+</span>
+        </QtyButton>
+
+        <PriceWrap>US${price * quantity}</PriceWrap>
+        <GarbageCan onClick={clearItemHandler} />
       </InfoCheckoutWrap>
     </CartItemWrap>
   )

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
 
-const multiEllipsis = `
+export const multiEllipsis = `
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -9,13 +9,12 @@ const multiEllipsis = `
 `
 
 export const BookCardWrap = styled.div`
-  width: 181px;
+  width: 140px;
   height: 280px;
-  background-color: #f8f8f9;
   font-size: 14px;
   padding: 5px 10px;
-  z-index: 1;
-  margin: 0px 5px 5px 0;
+  /* z-index: 1; */
+  /* margin: 0px 5px 5px 0; */
 
   button {
     width: 100%;
@@ -33,7 +32,6 @@ export const ImgWrap = styled.div`
   img {
     max-height: 100%;
     max-width: 100%;
-    z-index: 2;
   }
 `
 
@@ -41,7 +39,7 @@ export const InfoWrap = styled.div`
   height: 90px;
   width: 100%;
 
-  background-color: #fcfcfc;
+  /* background-color: #fcfcfc; */
   display: flex;
   flex-direction: column;
 
@@ -49,12 +47,12 @@ export const InfoWrap = styled.div`
     font-size: 13px;
 
     ${multiEllipsis}
-    margin-top: 5px;
+    margin-top: 10px;
     margin-bottom: auto;
   }
 
   p {
-    padding: 0;
+    padding: 2px 0;
   }
 `
 
@@ -65,5 +63,5 @@ export const AuthorWrap = styled.p`
 export const PriceWrap = styled.p`
   color: #ff0072;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
 `

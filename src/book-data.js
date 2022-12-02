@@ -14,7 +14,7 @@ import image_13 from './assets/目送.webp'
 import image_14 from './assets/the-little-prince.webp'
 import image_15 from './assets/鋼の錬金術師.webp'
 import image_16 from './assets/diary-of-a-wimpy-kid.webp'
-import image_17 from './assets/harry-potter-and-the-prisoner-of-azkaban.webp'
+import image_17 from "./assets/harry-potter-and-the-philosopher's-stone.webp"
 import image_18 from './assets/harry-potter-and-the-chamber-of-secret.webp'
 import image_19 from './assets/harry-potter-and-the-prisoner-of-azkaban.webp'
 import image_20 from './assets/harry-potter-and-the-goblet-of-fire.webp'

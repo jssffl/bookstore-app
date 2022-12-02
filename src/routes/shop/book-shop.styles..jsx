@@ -44,6 +44,8 @@ export const BaseLink = styled(Link)`
 `
 
 export const ProductsWrap = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min-context, 1fr));
+  background-color: #fff;
+  padding: 5px 10px;
 `

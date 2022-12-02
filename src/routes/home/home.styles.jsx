@@ -1,28 +1,36 @@
 import styled from 'styled-components/macro'
-
+import chevronRight from '../../assets/chevron-md-right.svg'
+import chevronLeft from '../../assets/chevron-md-left.svg'
 // export const HomeWrap = styled.div`
 //   grid-column: center-start/ center-end;
 // `
 
-export const BlockWrap = styled.div`
-  width: 100%;
-  height: 280px;
-  background-color: #fff;
+// export const BlockWrap = styled.div`
+//   width: 100%;
+//   height: 280px;
+//   background-color: #fff;
 
-  /* padding: 5px 10px; */
-  box-shadow: 0 2px 6px rgba(0, 0, 0 0.3);
-  margin-right: 5px;
-  margin-bottom: 5px;
-`
+//   /* padding: 5px 10px; */
+//   box-shadow: 0 2px 6px rgba(0, 0, 0 0.3);
+//   margin-right: 5px;
+//   margin-bottom: 5px;
+// `
 
 export const BannerWrap = styled.div`
-  grid-column: 1 /6;
-  height: 230px;
+  grid-column: 1 /-1;
+  height: 170px;
   background-color: #fff;
   margin-bottom: 5px;
-
   overflow: hidden;
   position: relative;
+
+  @media screen and (max-width: 900px) {
+    height: 150px;
+  }
+
+  @media screen and (max-width: 600px) {
+    height: 100px;
+  }
 
   a {
     height: 100%;
@@ -36,7 +44,7 @@ export const BannerWrap = styled.div`
     width: 100%;
     height: 100%;
     z-index: 10;
-    background-image: linear-gradient(to right bottom, #10bbd540, #00195040);
+    /* background-image: linear-gradient(to right bottom, #10bbd569, #00195069); */
   }
 
   img {
@@ -49,26 +57,16 @@ export const BannerWrap = styled.div`
   }
 `
 
-export const SubBannerWrap = styled.div`
-  height: 230px;
-  background-color: #fff;
-  margin-left: 5px;
-  grid-column: 6 /-1;
-  margin-right: 20px;
-
-  @media screen and (max-width: 1200px) {
-    /* width: 250px; */
-  }
-
-  @media screen and (max-width: 1000px) {
-    /* display: none; */
-  }
-`
-
 export const PanelWrap = styled.div`
   grid-column: 1 /-1;
   height: 350px;
   background-color: #fff;
   margin-bottom: 5px;
-  margin-right: 20px;
+`
+
+export const HeadingSecondary = styled.h2`
+  font-size: 18px;
+  width: 100%;
+  border-bottom: 1px solid var(--color-grey-light-1);
+  padding-bottom: 5px;
 `

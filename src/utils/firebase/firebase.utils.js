@@ -24,12 +24,7 @@ import {
 } from 'firebase/firestore'
 // Your web app's Firebase configuration
 
-import {
-  BOOK_DATA,
-  BOOK_BESTSELLERS_DATA,
-  BOOK_CATEGORIES_DATA,
-  BOOK_SERIES_DATA,
-} from '../../book-data'
+import { BOOK_DATA } from '../../book-data'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDN_3MEQPOqjvBiLXaa3uKiscHiyAJehFI',

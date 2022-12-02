@@ -24,12 +24,13 @@ export const GlobalStyle = createGlobalStyle`
 
     body {  
         padding: 20px 40px;
-        font-family: 'Noto Sans', sans-serif;
+        font-family:  'Roboto', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         background-color: #ededef;
         color: var(--color-grey-dark);
-
+       
+      
       
     }
 

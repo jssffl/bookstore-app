@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
 import { selectCartTotal } from '../../store/cart/cart.selector'
 import { selectCurrentUser } from '../../store/user/user.selector'
-import { PaymentButton, FormContainer } from './payment-form.styles'
+import { PaymentButton, Form, ElementWrap } from './payment-form.styles'
 
 const PaymentForm = () => {
   const stripe = useStripe()
@@ -58,13 +58,15 @@ const PaymentForm = () => {
   }
 
   return (
-    <FormContainer onSubmit={paymentHandler}>
+    <Form onSubmit={paymentHandler}>
       <h2>Credit Card Payment</h2>
-      <CardElement />
+      <ElementWrap>
+        <CardElement />
+      </ElementWrap>
       <PaymentButton isLoading={isProcessingPayment} buttonType='add'>
         Pay Now
       </PaymentButton>
-    </FormContainer>
+    </Form>
   )
 }
 

@@ -6,7 +6,7 @@ export const Container = styled.div`
   grid-template-rows: 150px;
   grid-template-columns:
     [full-start] 1fr
-    [center-start] repeat(8, [col-start] minmax(40px, 160px) [col-end])
+    [center-start] repeat(10, [col-start] minmax(40px, 144px) [col-end])
     [center-end] 1fr [full-end];
 
   /* grid-template-columns:
