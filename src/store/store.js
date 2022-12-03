@@ -1,23 +1,29 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { combineReducers, applyMiddleware } from 'redux'
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
+import { persistStore, persistReducer } from 'redux-persist'
+import storageSession from 'reduxjs-toolkit-persist/lib/storage/session'
+import { combineReducers } from 'redux'
 import { userReducer } from './user/user.slice'
 import { booksReducer } from './books/books.slice'
 import { cartReducer } from './cart/cart.slice'
 import logger from 'redux-logger'
-import thunk from 'redux-thunk'
 
-export const reducers = combineReducers({
+export const rootReducer = combineReducers({
   user: userReducer,
   books: booksReducer,
   cart: cartReducer,
 })
 
-const middlewares = [
-  process.env.NODE_ENV !== 'production' && logger,
-  thunk,
-].filter(Boolean)
+const persistConfig = {
+  key: 'root',
+  storage: storageSession,
+  whitelist: ['cart'],
+}
+
+const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 export const store = configureStore({
-  reducer: reducers,
-  middleware: middlewares,
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 })
+
+export const persistor = persistStore(store)

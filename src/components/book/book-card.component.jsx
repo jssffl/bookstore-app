@@ -10,6 +10,7 @@ import {
 import CustomButton from '../UI/button.component'
 import { selectCartItems } from '../../store/cart/cart.selector'
 import { addItemToCart, setIsCartOpen } from '../../store/cart/cart.slice'
+import { Link } from 'react-router-dom'
 const BookCard = (props) => {
   const { image, title, author, price, id } = props.item
   const dispatch = useDispatch()
@@ -22,17 +23,18 @@ const BookCard = (props) => {
       dispatch(setIsCartOpen(true))
     }
   }
-  const navigateToBookPage = (book) => {
-    navigate(`/shop//${id}`)
-  }
 
   return (
-    <BookCardWrap onClick={() => navigateToBookPage}>
+    <BookCardWrap>
       <ImgWrap>
-        <img src={image} alt={title} />
+        <Link to={`shop/${id}`}>
+          <img src={image} alt={title} />
+        </Link>
       </ImgWrap>
       <InfoWrap>
-        <h3>{title}</h3>
+        <h3>
+          <Link to={`shop/${id}`}>{title}</Link>
+        </h3>
         <AuthorWrap>by {author}</AuthorWrap>
         <PriceWrap>US$ {price}</PriceWrap>
       </InfoWrap>

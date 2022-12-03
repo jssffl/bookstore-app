@@ -7,21 +7,24 @@ export const initialState = {
   error: null,
 }
 
-export const fetchBooksAsync = createAsyncThunk('books/fetchBooks', () => {
-  return getCollectionAndDocuments('books')
-})
+export const fetchBooksAsync = createAsyncThunk(
+  'books/fetchBooks',
+  async () => {
+    return await getCollectionAndDocuments('books')
+  }
+)
 
 const booksSlice = createSlice({
   name: 'books',
   initialState,
   extraReducers: (builder) => {
     builder
-      .addCase(fetchBooksAsync.pending, (state, { payload }) => {
+      .addCase(fetchBooksAsync.pending, (state, action) => {
         state.isLoading = true
       })
 
       .addCase(fetchBooksAsync.fulfilled, (state, { payload }) => {
-        state.books = payload || []
+        state.books = payload
         state.isLoading = false
       })
 

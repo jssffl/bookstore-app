@@ -1,7 +1,7 @@
 import { SpinnerContainer, SpinnerOverlay } from './spinner.styles'
 
-const Spinner = () => (
-  <SpinnerOverlay>
+const Spinner = (props) => (
+  <SpinnerOverlay fullWidth={props.fullWidth}>
     <SpinnerContainer />
   </SpinnerOverlay>
 )

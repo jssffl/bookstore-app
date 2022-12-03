@@ -3,6 +3,8 @@ import { createSelector } from '@reduxjs/toolkit'
 export const selectBooks = (state) =>
   state.books && state.books.books[0] && state.books.books[0]['items']
 
+export const selectFetchBooksIsLoading = (state) => state.books.isLoading
+
 export const selectCategories = createSelector([selectBooks], (books) =>
   books
     ? books.reduce((acc, item) => {

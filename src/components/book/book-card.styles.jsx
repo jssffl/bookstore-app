@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
 
 export const multiEllipsis = `
@@ -15,10 +14,12 @@ export const singleEllipsis = `
   overflow: hidden;
 `
 export const BookCardWrap = styled.div`
+  display: block;
   width: 140px;
   height: 280px;
   font-size: 14px;
   padding: 5px 10px;
+  color: #444;
 
   button {
     width: 100%;
@@ -48,15 +49,25 @@ export const InfoWrap = styled.div`
   flex-direction: column;
 
   h3 {
-    font-size: 13px;
-
-    ${multiEllipsis}
     margin-top: 10px;
     margin-bottom: auto;
   }
 
   p {
     padding: 2px 0;
+  }
+
+  a,
+  a:visited {
+    color: #444;
+
+    font-size: 13px;
+
+    ${multiEllipsis}
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 `
 

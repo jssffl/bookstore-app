@@ -22,6 +22,7 @@ import Cart from './routes/cart/cart.component.jsx'
 import Checkout from './routes/cart/checkout.component'
 import BookNewReleases from './routes/shop/book-new-releases.component'
 import Account from './routes/auth/account.component'
+import BookPage from './routes/book-page/book-page.component'
 
 function App() {
   const dispatch = useDispatch()
@@ -30,6 +31,7 @@ function App() {
       if (user) {
         createUserDocumentFromAuth(user)
       }
+
       dispatch(setCurrentUser(user))
     })
 
@@ -46,13 +48,13 @@ function App() {
       <Routes>
         <Route path='/' element={<MainLayout />}>
           <Route index element={<Home />} />
-          <Route path='account' element={<Account />} />
+          <Route path='/account' element={<Account />} />
           <Route path='/account/login' element={<Authentication />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/cart/checkout' element={<Checkout />} />
           <Route path='/bestsellers' element={<BookBestsellers />} />
           <Route path='/new-releases' element={<BookNewReleases />} />
-          <Route path='/shop/:bookId' element={<Home />} />
+          <Route path='/shop/:bookId' element={<BookPage />} />
           <Route path='/lang/:lang' element={<BookLanguage />} />
           <Route path='/series/:series' element={<BookSeries />} />
           <Route path='/category/:category' element={<BookCategory />} />

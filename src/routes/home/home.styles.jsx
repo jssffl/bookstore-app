@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import { BlockWrap } from '../../components/UI/block-wrap.styles'
 import { MainContentWrap } from '../../components/UI/main.content.styles'
 import { SideBar } from '../../components/UI/sidebar.styles'
 
