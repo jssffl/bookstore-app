@@ -2,11 +2,11 @@ import styled from 'styled-components/macro'
 
 export const BaseButton = styled.button`
   background-color: white;
-  border: 1px solid #c0c0c0;
+  /* border: 1px solid #c0c0c0; */
   font-weight: 400;
   color: #696969;
   letter-spacing: 0.2px;
-  height: 35px;
+  height: 30px;
   width: 150px;
   border-radius: 6px;
   font-size: 12px;
@@ -14,10 +14,11 @@ export const BaseButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-
+  background-color: #f0f0f0;
   &:hover {
-    border: 1px solid var(--color-primary);
-    color: var(--color-primary);
+    /* border: 1px solid var(--color-primary); */
+    /* color: var(--color-primary); */
+    background-color: #e2e2e2;
   }
 `
 
@@ -37,7 +38,7 @@ export const AddButton = styled.button`
 
   &:hover {
     /* border: none; */
-    /* background-color: #10bbd5; */
+    background-color: #10bbd5dd;
   }
 `
 

@@ -1,11 +1,10 @@
 import styled from 'styled-components/macro'
-import { BlockWrap } from '../../components/UI/block-wrap.styles'
 import { MainContentWrap } from '../../components/UI/main.content.styles'
 import { SideBar } from '../../components/UI/sidebar.styles'
 
 export const BannerWrap = styled.div`
   grid-column: 1 /-1;
-  height: 170px;
+  height: 180px;
   background-color: #fff;
   margin-bottom: 5px;
   overflow: hidden;

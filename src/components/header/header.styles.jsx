@@ -30,7 +30,7 @@ export const TheHeader = styled.header`
   position: relative;
 
   display: grid;
-  grid-template-rows: 44px 66px 40px;
+  grid-template-rows: 44px 76px 40px;
 `
 
 export const PrimaryWrap = styled.div`

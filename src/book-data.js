@@ -398,6 +398,7 @@ export const BOOK_DATA = [
         bestsellers: false,
         series: 'Harry-Potter',
         label: 'Book 5 of 5: Harry Potter Illustrated Editions',
+        ISBN: '054579143X',
       },
 
       {

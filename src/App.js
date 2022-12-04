@@ -40,6 +40,12 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchBooksAsync())
+    const fetchRatings = async () => {
+      fetch('/.netlify/functions/get-book-ratings').then((data) =>
+        console.log(data)
+      )
+    }
+    fetchRatings()
   }, [])
 
   return (

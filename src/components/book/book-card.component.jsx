@@ -27,20 +27,20 @@ const BookCard = (props) => {
   return (
     <BookCardWrap>
       <ImgWrap>
-        <Link to={`shop/${id}`}>
+        <Link to={`/shop/${id}`}>
           <img src={image} alt={title} />
         </Link>
       </ImgWrap>
       <InfoWrap>
         <h3>
-          <Link to={`shop/${id}`}>{title}</Link>
+          <Link to={`/shop/${id}`}>{title}</Link>
         </h3>
         <AuthorWrap>by {author}</AuthorWrap>
         <PriceWrap>US$ {price}</PriceWrap>
       </InfoWrap>
 
       <CustomButton buttonType='add' onClick={addCartHandler}>
-        Add To Cart
+        Add to Cart
       </CustomButton>
     </BookCardWrap>
   )
