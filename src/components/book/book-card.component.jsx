@@ -1,5 +1,8 @@
-import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import CustomButton from '../UI/button.component'
+import { addItemToCart } from '../../store/cart/cart.slice'
+
 import {
   AuthorWrap,
   BookCardWrap,
@@ -7,21 +10,13 @@ import {
   ImgWrap,
   PriceWrap,
 } from './book-card.styles'
-import CustomButton from '../UI/button.component'
-import { selectCartItems } from '../../store/cart/cart.selector'
-import { addItemToCart, setIsCartOpen } from '../../store/cart/cart.slice'
-import { Link } from 'react-router-dom'
+
 const BookCard = (props) => {
   const { image, title, author, price, id } = props.item
   const dispatch = useDispatch()
-  const cartItems = useSelector(selectCartItems)
-  const navigate = useNavigate()
 
   const addCartHandler = (e) => {
     dispatch(addItemToCart(props.item))
-    if (cartItems && cartItems.length === 0) {
-      dispatch(setIsCartOpen(true))
-    }
   }
 
   return (
@@ -38,7 +33,6 @@ const BookCard = (props) => {
         <AuthorWrap>by {author}</AuthorWrap>
         <PriceWrap>US$ {price}</PriceWrap>
       </InfoWrap>
-
       <CustomButton buttonType='add' onClick={addCartHandler}>
         Add to Cart
       </CustomButton>

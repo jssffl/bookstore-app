@@ -1,24 +1,24 @@
-const fetch = require('node-fetch')
+const axios = require('axios')
 
 exports.handler = async (event) => {
+  const { isbn } = event.queryStringParameters
+  let res
+
   try {
-    const res = await fetch(
-      'https://www.goodreads.com/book/isbn/054579143X?format=json',
-      {
-        method: ' GET',
-        headers: {
-          'content-type': 'application/json',
-        },
-      }
+    res = await axios.get(
+      ` https://www.goodreads.com/book/review_counts.json?isbns=${isbn}`
     )
-    console.log('in netlify func')
-    console.log(res)
-    return { statusCode: 200, body: JSON.stringify({ res }) }
-  } catch (error) {
-    console.log({ error })
+  } catch (err) {
     return {
       statusCode: 400,
-      body: JSON.stringify({ error }),
+      body: JSON.stringify({ error: err.message }),
     }
+  }
+
+  return {
+    statusCode: 200,
+    body: JSON.stringify({
+      data: res.data,
+    }),
   }
 }

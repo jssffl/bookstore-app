@@ -51,6 +51,7 @@ export const BOOK_DATA = [
         category: 'Life',
         bestsellers: true,
         series: null,
+        isbn: '7508633555',
       },
       {
         id: 2,
@@ -66,6 +67,8 @@ export const BOOK_DATA = [
         category: 'Life',
         bestsellers: true,
         series: null,
+
+        isbn: '1847941834',
       },
       {
         id: 3,
@@ -80,6 +83,7 @@ export const BOOK_DATA = [
         category: 'Life',
         bestsellers: false,
         series: null,
+        isbn: '1501124021',
       },
 
       {
@@ -96,6 +100,7 @@ export const BOOK_DATA = [
         category: 'Self-Help',
         bestsellers: true,
         series: null,
+        isbn: '1592408419',
       },
       {
         id: 5,
@@ -110,6 +115,7 @@ export const BOOK_DATA = [
         category: 'Self-Help',
         bestsellers: false,
         series: null,
+        isbn: '1647225124',
       },
       {
         id: 6,
@@ -124,11 +130,12 @@ export const BOOK_DATA = [
         category: 'Self-Help',
         bestsellers: false,
         series: null,
+        isbn: '0919123880',
       },
       {
         id: 7,
         title: 'Counselling for Toads: A Psychological Adventure',
-        author: ' Robert de Board',
+        author: 'Robert de Board',
         price: 31.94,
         description:
           "Best-selling author, Robert de Board says: 'Toad's experiences are based on my own experiences of counselling people over a period of twenty years. Counselling for Toads is really an amalgamation of the many counselling sessions I have held and contains a distillation of the truths I have learnt from practice.' Appropriate for anyone approaching counselling for the first time, whether as a student or as a client, or for the professional counsellor looking for something to recommend to the hesitant, Counselling for Toads will appeal to both children and adults of all ages.",
@@ -138,6 +145,7 @@ export const BOOK_DATA = [
         category: 'Self-Help',
         bestsellers: false,
         series: null,
+        isbn: '0415174295',
       },
 
       {
@@ -153,10 +161,11 @@ export const BOOK_DATA = [
         category: 'Social-Sciences',
         bestsellers: false,
         series: null,
+        isbn: '0393354326',
       },
       {
         id: 9,
-        title: 'A Brief History of Humankind',
+        title: 'Sapiens: A Brief History of Humankind',
         author: 'Yuval Noah Harari',
         price: 24.99,
         description:
@@ -167,6 +176,7 @@ export const BOOK_DATA = [
         category: 'Social-Sciences',
         bestsellers: true,
         series: null,
+        isbn: '0062316095',
       },
 
       {
@@ -182,6 +192,7 @@ export const BOOK_DATA = [
         category: 'Social-Sciences',
         bestsellers: false,
         series: null,
+        isbn: '0525512195',
       },
       {
         id: 11,
@@ -197,6 +208,7 @@ export const BOOK_DATA = [
         category: 'Social-Sciences',
         bestsellers: false,
         series: null,
+        isbn: '1612681131',
       },
 
       {
@@ -212,6 +224,7 @@ export const BOOK_DATA = [
         category: 'Literature',
         bestsellers: false,
         series: null,
+        isbn: '0679720200',
       },
 
       {
@@ -227,6 +240,7 @@ export const BOOK_DATA = [
         category: 'Literature',
         bestsellers: false,
         series: null,
+        isbn: '7108032910',
       },
 
       {
@@ -242,6 +256,7 @@ export const BOOK_DATA = [
         category: 'Comic-Book',
         bestsellers: true,
         series: null,
+        isbn: '0156012197',
       },
       {
         id: 15,
@@ -256,6 +271,7 @@ export const BOOK_DATA = [
         category: 'Comic-Book',
         bestsellers: false,
         series: null,
+        isbn: '4757506201',
       },
       {
         id: 16,
@@ -271,6 +287,7 @@ export const BOOK_DATA = [
         bestsellers: false,
         series: 'Diary-of-a-Wimpy-Kid',
         label: 'Book 1 of 17: Diary of a Wimpy Kid',
+        isbn: '0810993139',
       },
 
       {
@@ -287,6 +304,7 @@ export const BOOK_DATA = [
         bestsellers: false,
         series: 'Harry-Potter',
         label: 'Book 1 of 7: Harry Potter',
+        isbn: '1408855895',
       },
 
       {
@@ -303,6 +321,7 @@ export const BOOK_DATA = [
         bestsellers: false,
         series: 'Harry-Potter',
         label: 'Book 2 of 7: Harry Potter',
+        isbn: '0439064872',
       },
 
       {
@@ -319,6 +338,7 @@ export const BOOK_DATA = [
         bestsellers: false,
         series: 'Harry-Potter',
         label: 'Book 3 of 7: Harry Potter',
+        isbn: '0439136369',
       },
 
       {
@@ -335,6 +355,8 @@ export const BOOK_DATA = [
         bestsellers: false,
         series: 'Harry-Potter',
         label: 'Book 4 of 7: Harry Potter',
+
+        isbn: '0439139600',
       },
 
       {
@@ -351,6 +373,7 @@ export const BOOK_DATA = [
         bestsellers: false,
         series: 'Harry-Potter',
         label: 'Book 5 of 7: Harry Potter',
+        isbn: '0439358078',
       },
       {
         id: 22,
@@ -366,6 +389,7 @@ export const BOOK_DATA = [
         bestsellers: false,
         series: 'Harry-Potter',
         label: 'Book 6 of 7: Harry Potter',
+        isbn: '0439785960',
       },
 
       {
@@ -382,6 +406,7 @@ export const BOOK_DATA = [
         bestsellers: false,
         series: 'Harry-Potter',
         label: 'Book 7 of 7: Harry Potter',
+        isbn: '0545010225',
       },
       {
         id: 24,
@@ -414,6 +439,7 @@ export const BOOK_DATA = [
         category: 'Literature',
         bestsellers: false,
         series: 'Jin-Yong',
+        isbn: '7806553320',
       },
       {
         id: 26,
@@ -428,6 +454,7 @@ export const BOOK_DATA = [
         category: 'Literature',
         bestsellers: false,
         series: 'Jin-Yong',
+        isbn: '9573229129',
       },
 
       {
@@ -443,6 +470,7 @@ export const BOOK_DATA = [
         category: 'Literature',
         bestsellers: false,
         series: 'Jin-Yong',
+        isbn: '9573255731',
       },
 
       {
@@ -458,6 +486,7 @@ export const BOOK_DATA = [
         category: 'Literature',
         bestsellers: false,
         series: 'Jin-Yong',
+        isbn: '9573229307',
       },
 
       {
@@ -473,6 +502,7 @@ export const BOOK_DATA = [
         category: 'Literature',
         bestsellers: false,
         series: 'Jin-Yong',
+        isbn: '9573262206',
       },
 
       {
@@ -488,6 +518,7 @@ export const BOOK_DATA = [
         category: 'Literature',
         bestsellers: false,
         series: null,
+        isbn: '1668001225',
       },
 
       {
@@ -504,6 +535,7 @@ export const BOOK_DATA = [
         bestsellers: true,
         series: 'Diary-of-a-Wimpy-Kid',
         label: 'Book 17 of 17: Diary of a Wimpy Kid',
+        isbn: '141976294X',
       },
       {
         id: 32,
@@ -518,6 +550,7 @@ export const BOOK_DATA = [
         category: 'Life',
         bestsellers: false,
         series: null,
+        isbn: '0593237463',
       },
       {
         id: 33,
@@ -532,6 +565,7 @@ export const BOOK_DATA = [
         category: 'Life',
         bestsellers: false,
         series: null,
+        isbn: '1250866448',
       },
       {
         id: 34,
@@ -546,6 +580,7 @@ export const BOOK_DATA = [
         category: 'Literature',
         bestsellers: false,
         series: null,
+        isbn: '0571368700',
       },
       {
         id: 35,
@@ -561,6 +596,7 @@ export const BOOK_DATA = [
         category: 'Social-Sciences',
         bestsellers: false,
         series: null,
+        isbn: '1472852672',
       },
       {
         id: 36,
@@ -576,6 +612,7 @@ export const BOOK_DATA = [
         bestsellers: false,
         series: 'Diary-of-a-Wimpy-Kid',
         label: 'Book 2 of 17: Diary of a Wimpy Kid',
+        isbn: '1419741861',
       },
     ],
   },

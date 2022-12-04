@@ -23,7 +23,9 @@ import Checkout from './routes/cart/checkout.component'
 import BookNewReleases from './routes/shop/book-new-releases.component'
 import Account from './routes/auth/account.component'
 import BookPage from './routes/book-page/book-page.component'
+import axios from 'axios'
 
+// import fetch from 'node-fetch'
 function App() {
   const dispatch = useDispatch()
   useEffect(() => {
@@ -40,12 +42,6 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchBooksAsync())
-    const fetchRatings = async () => {
-      fetch('/.netlify/functions/get-book-ratings').then((data) =>
-        console.log(data)
-      )
-    }
-    fetchRatings()
   }, [])
 
   return (
