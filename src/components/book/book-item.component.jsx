@@ -8,7 +8,6 @@ import Spinner from '../../components/UI/spinner.component'
 
 import {
   BookItemWrap,
-  Author,
   ItemImg,
   ItemCheckout,
   ItemPrice,
@@ -102,32 +101,35 @@ const BookItem = () => {
           </ItemImg>
 
           <MetaInfo>
-            {bookItem && bookItem.rating && bookItem.ratingsCount && (
-              <StarWrap>
-                {Array.from(Array(Math.ceil(bookItem.rating)).keys()).map(
-                  (_, index) => {
-                    ratingIdx--
-                    if (ratingIdx < 1) {
-                      return <HalfStar key={index} />
-                    } else {
-                      return <FullStar key={index} />
+            {bookItem &&
+              bookItem.rating &&
+              bookItem.rating > 0 &&
+              bookItem.ratingsCount && (
+                <StarWrap>
+                  {Array.from(Array(Math.ceil(bookItem.rating)).keys()).map(
+                    (_, index) => {
+                      ratingIdx--
+                      if (ratingIdx < 1) {
+                        return <HalfStar key={index} />
+                      } else {
+                        return <FullStar key={index} />
+                      }
                     }
-                  }
-                )}
+                  )}
 
-                <span>{bookItem.rating}&nbsp;</span>
-                <RatingWrap>
-                  <span>
-                    &#40;
-                    {bookItem.ratingsCount
-                      .toString()
-                      .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}
-                    &nbsp;
-                  </span>
-                  <span>ratings by Goodreads&#41;</span>
-                </RatingWrap>
-              </StarWrap>
-            )}
+                  <span>{bookItem.rating}&nbsp;</span>
+                  <RatingWrap>
+                    <span>
+                      &#40;
+                      {bookItem.ratingsCount
+                        .toString()
+                        .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}
+                      &nbsp;
+                    </span>
+                    <span>ratings by Goodreads&#41;</span>
+                  </RatingWrap>
+                </StarWrap>
+              )}
             <span>Paperback | {bookItem.language}</span>
             <span>by {bookItem.author}</span>
           </MetaInfo>

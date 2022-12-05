@@ -5,14 +5,11 @@ export const BookItemWrap = styled.div`
   padding: 10px 25px;
   font-size: 14px;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 90px 70px min-content min-content min-content;
+  grid-template-rows: 70px 60px min-content min-content min-content;
 
   @media screen and (max-width: 1000px) {
-    grid-template-rows: min-content 90px min-content min-content min-content;
-    padding: 10px 15px;
-  }
-  @media screen and (max-width: 600px) {
     grid-template-rows: repeat(5, min-content);
+    padding: 10px 15px;
   }
 `
 
@@ -45,16 +42,9 @@ export const ItemTitle = styled.div`
     }
   }
 `
-export const Author = styled.span`
-  @media screen and (max-width: 1000px) {
-    order: 1;
-    margin: 5px 0;
-  }
-`
 
 export const ItemImg = styled.div`
   padding: 10px 25px 30px 25px;
-
   background-color: #fff;
   grid-column: 1/2;
   grid-row: 1/4;
@@ -147,7 +137,7 @@ export const StarWrap = styled.div`
     height: auto;
 
     span {
-      margin: 5px 0;
+      margin: 1px 0;
     }
   }
 
