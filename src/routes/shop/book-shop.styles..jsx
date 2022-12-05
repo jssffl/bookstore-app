@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
+
 export const Heading = styled(Link)`
   display: flex;
   padding-bottom: 10px;
@@ -78,11 +79,11 @@ export const ContentWrap = styled.div`
 `
 
 export const BannerTitle = styled.h2`
-  text-transform: capitalize;
   line-height: 60px;
   font-size: 24px;
   font-weight: 700;
 
+  ::first-letter,
   span::first-letter {
     text-transform: capitalize;
   }

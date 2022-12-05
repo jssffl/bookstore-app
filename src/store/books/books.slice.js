@@ -14,9 +14,27 @@ export const fetchBooksAsync = createAsyncThunk(
   }
 )
 
+const addBookRating = (books, productToAdd) => {
+  return books.map((item) =>
+    item.isbn === productToAdd.isbn
+      ? {
+          ...item,
+          rating: productToAdd.rating,
+          ratingsCount: productToAdd.ratingsCount,
+        }
+      : item
+  )
+}
+
 const booksSlice = createSlice({
   name: 'books',
   initialState,
+  reducers: {
+    addRatingToBook: (state, { payload }) => {
+      const newBooks = addBookRating(state.books[0]['items'], payload)
+      state.books[0]['items'] = newBooks
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchBooksAsync.pending, (state, action) => {
@@ -37,3 +55,4 @@ const booksSlice = createSlice({
 })
 
 export const booksReducer = booksSlice.reducer
+export const { addRatingToBook } = booksSlice.actions

@@ -1,11 +1,13 @@
 import { useDispatch } from 'react-redux'
-import { ReactComponent as GarbageCan } from '../../assets/garbage-trash.svg'
+import { Link } from 'react-router-dom'
+
 import {
   addItemToCart,
   removeItemFromCart,
   clearItemFromCart,
 } from '../../store/cart/cart.slice'
 
+import { ReactComponent as GarbageCan } from '../../assets/garbage-trash.svg'
 import {
   ImgWrap,
   CartItemWrap,
@@ -17,21 +19,14 @@ import {
   MetaInfo,
   Format,
 } from './cart-item.styles'
-import { Link } from 'react-router-dom'
+
 const CartItem = ({ cartItem }) => {
-  const { title, image, price, id, quantity, author, language } = cartItem
+  const { title, image, price, id, quantity, author, language, isbn } = cartItem
   const dispatch = useDispatch()
-  const addItemHandler = () => {
-    dispatch(addItemToCart(cartItem))
-  }
 
-  const removeItemHandler = () => {
-    dispatch(removeItemFromCart(cartItem))
-  }
-
-  const clearItemHandler = () => {
-    dispatch(clearItemFromCart(cartItem))
-  }
+  const addItemHandler = () => dispatch(addItemToCart(cartItem))
+  const removeItemHandler = () => dispatch(removeItemFromCart(cartItem))
+  const clearItemHandler = () => dispatch(clearItemFromCart(cartItem))
 
   return (
     <CartItemWrap key={id}>
@@ -40,11 +35,10 @@ const CartItem = ({ cartItem }) => {
       </ImgWrap>
       <InfoWrap>
         <h4>
-          <Link to={`/shop/${id}`}>{title}</Link>
+          <Link to={`/shop/${isbn}`}>{title}</Link>
         </h4>
         <MetaInfo>
           <Format>Paperback, {language}</Format>
-
           <span>{author}</span>
         </MetaInfo>
         <PriceWrap>US${price}</PriceWrap>
@@ -58,7 +52,6 @@ const CartItem = ({ cartItem }) => {
           <p>{quantity}</p>
           <span onClick={addItemHandler}>+</span>
         </QtyButton>
-
         <PriceWrap>US${price * quantity}</PriceWrap>
         <GarbageCan onClick={clearItemHandler} />
       </InfoCheckoutWrap>

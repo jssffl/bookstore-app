@@ -129,4 +129,4 @@ export const getCollectionAndDocuments = async (collectionKey) => {
   return querySnapshot.docs.map((docSnapshot) => docSnapshot.data())
 }
 
-addCollectionAndDocuments('books', BOOK_DATA)
+// addCollectionAndDocuments('books', BOOK_DATA)

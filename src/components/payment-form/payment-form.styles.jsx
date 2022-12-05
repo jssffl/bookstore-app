@@ -9,6 +9,10 @@ export const Form = styled.form`
     font-size: 18px;
     margin-bottom: 15px;
   }
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
 `
 
 export const PaymentButton = styled(CustomButton)`

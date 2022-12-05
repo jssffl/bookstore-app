@@ -1,47 +1,5 @@
 import styled from 'styled-components/macro'
 
-export const ButtonWrap = styled.div`
-  padding: 10px;
-
-  button {
-    margin: 0 auto;
-  }
-`
-
-export const EmptyCart = styled.div`
-  grid-column: center-start / center-end;
-  margin: 10px;
-  font-size: 14px;
-
-  h2 {
-    background-color: #fff;
-    font-size: 16px;
-    font-weight: 400;
-    padding: 10px;
-  }
-
-  @media screen and (max-width: 600px) {
-    button {
-      width: 100%;
-    }
-  }
-`
-
-export const Message = styled.p`
-  background-color: #fff;
-  margin: 10px 0;
-  padding: 20px 10px;
-
-  h3 {
-    font-size: 16px;
-  }
-
-  p {
-    height: 40px;
-    line-height: 40px;
-  }
-`
-
 export const CartContainer = styled.div`
   grid-column: center-start / center-end;
   padding: 20px 20px 10px 20px;
@@ -98,6 +56,8 @@ export const Total = styled.div`
   button {
     margin-left: auto;
     margin-top: 30px;
+    font-size: 14px;
+    height: 35px;
   }
 
   @media screen and (max-width: 900px) {

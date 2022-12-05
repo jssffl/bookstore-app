@@ -41,7 +41,7 @@ const SignUpForm = () => {
         case 'auth/email-already-in-use':
           setMessage('Email already in use!')
           break
-        case 'Password should be at least 6 characters (auth/weak-password).':
+        case 'auth/weak-password':
           setMessage('Password should be at least 6 characters!')
           break
         default:

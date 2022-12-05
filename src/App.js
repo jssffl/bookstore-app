@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import { Suspense, useEffect } from 'react'
+import { Suspense, lazy, useEffect } from 'react'
 import { GlobalStyle } from './global.styles'
 import Spinner from './components/UI/spinner.component'
 import { useDispatch } from 'react-redux'
@@ -14,18 +14,22 @@ import {
 } from './utils/firebase/firebase.utils'
 
 import { fetchBooksAsync } from './store/books/books.slice'
-import BookCategory from './routes/shop/book-category.component'
-import BookBestsellers from './routes/shop/book-bestsellers.components'
-import BookSeries from './routes/shop/book-series.component'
-import BookLanguage from './routes/shop/book-language.component'
-import Cart from './routes/cart/cart.component.jsx'
-import Checkout from './routes/cart/checkout.component'
-import BookNewReleases from './routes/shop/book-new-releases.component'
-import Account from './routes/auth/account.component'
-import BookPage from './routes/book-page/book-page.component'
-import axios from 'axios'
 
-// import fetch from 'node-fetch'
+const BookCategory = lazy(() => import('./routes/shop/book-category.component'))
+const BookBestsellers = lazy(() =>
+  import('./routes/shop/book-bestsellers.components')
+)
+const BookSeries = lazy(() => import('./routes/shop/book-series.component'))
+const BookLanguage = lazy(() => import('./routes/shop/book-language.component'))
+const BookNewReleases = lazy(() =>
+  import('./routes/shop/book-new-releases.component')
+)
+const Cart = lazy(() => import('./routes/cart/cart.component.jsx'))
+const Checkout = lazy(() => import('./routes/cart/checkout.component'))
+
+const Account = lazy(() => import('./routes/auth/account.component'))
+const BookPage = lazy(() => import('./routes/book-page/book-page.component'))
+
 function App() {
   const dispatch = useDispatch()
   useEffect(() => {
@@ -56,7 +60,7 @@ function App() {
           <Route path='/cart/checkout' element={<Checkout />} />
           <Route path='/bestsellers' element={<BookBestsellers />} />
           <Route path='/new-releases' element={<BookNewReleases />} />
-          <Route path='/shop/:bookId' element={<BookPage />} />
+          <Route path='/shop/:bookIsbn' element={<BookPage />} />
           <Route path='/lang/:lang' element={<BookLanguage />} />
           <Route path='/series/:series' element={<BookSeries />} />
           <Route path='/category/:category' element={<BookCategory />} />
