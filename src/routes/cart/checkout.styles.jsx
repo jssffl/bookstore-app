@@ -138,7 +138,7 @@ export const UserInfo = styled.div`
     width: 80%;
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 600px) {
     width: 100%;
   }
 `

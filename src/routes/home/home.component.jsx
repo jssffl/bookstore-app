@@ -15,7 +15,7 @@ import BookCard from '../../components/book/book-card.component'
 
 import featuredImgSm from '../../assets/christmas-sm.webp'
 import featuredImgLg from '../../assets/christmas-md.png'
-import blogImg from '../../assets/sidebar-img.jpg'
+import blogImg from '../../assets/sidebar-img.webp'
 import clubImg from '../../assets/book-club.webp'
 
 import {

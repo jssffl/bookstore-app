@@ -17,6 +17,7 @@ export const CartContainer = styled.div`
 
   @media screen and (max-width: 600px) {
     padding: 10px 15px;
+
     h1 {
       font-size: 22px;
     }

@@ -114,8 +114,9 @@ const BookItem = () => {
                     }
                   }
                 )}
+
+                <span>{bookItem.rating}&nbsp;</span>
                 <RatingWrap>
-                  <span>{bookItem.rating}&nbsp;</span>
                   <span>
                     &#40;
                     {bookItem.ratingsCount

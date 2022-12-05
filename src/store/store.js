@@ -30,14 +30,27 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
-export const store = configureStore({
-  reducer: persistedReducer,
-  middleware: (getDefaultMiddleware) =>
+let middleWares
+
+if (process.env.NODE_ENV !== 'production') {
+  middleWares = (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(logger),
+    }).concat(logger)
+} else {
+  middleWares = (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    })
+}
+
+export const store = configureStore({
+  reducer: persistedReducer,
+  middleware: middleWares,
 })
 
 export const persistor = persistStore(store)

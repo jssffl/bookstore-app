@@ -7,8 +7,12 @@ export const BookItemWrap = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 90px 70px min-content min-content min-content;
 
+  @media screen and (max-width: 1000px) {
+    grid-template-rows: min-content 90px min-content min-content min-content;
+    padding: 10px 15px;
+  }
   @media screen and (max-width: 600px) {
-    grid-template-rows: 85px 55px min-content min-content min-content;
+    grid-template-rows: repeat(5, min-content);
   }
 `
 
@@ -63,7 +67,7 @@ export const ItemImg = styled.div`
   @media screen and (max-width: 1000px) {
     grid-column: 1/3;
     grid-row: 2/4;
-    padding: 0px 10px 5px 10px;
+    padding: 0px;
     display: flex;
     justify-content: center;
 
@@ -96,7 +100,6 @@ export const ItemDescription = styled.div`
   @media screen and (max-width: 1000px) {
     grid-column: 1/-1;
     grid-row: 4/5;
-
     padding: 15px 20px;
     margin-top: 15px;
   }
@@ -109,9 +112,7 @@ export const ItemDescription = styled.div`
 export const MetaInfo = styled.div`
   grid-column: 2/4;
   background-color: #fff;
-
   padding-right: 15px;
-
   display: flex;
   flex-direction: column;
 
@@ -128,15 +129,34 @@ export const MetaInfo = styled.div`
     grid-column: 1/-1;
     grid-row: 2/3;
     padding-left: 15px;
+    padding-bottom: 10px;
   }
 `
 export const StarWrap = styled.div`
   display: flex;
   align-items: flex-end;
   height: 24px;
+  margin-bottom: 5px;
 
   span {
     margin: 0;
+  }
+
+  @media screen and (max-width: 700px) {
+    flex-wrap: wrap;
+    height: auto;
+
+    span {
+      margin: 5px 0;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    height: 24px;
+
+    span {
+      margin: 0;
+    }
   }
 `
 export const RatingWrap = styled.div`
