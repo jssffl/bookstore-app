@@ -35,7 +35,6 @@ const defaultRatings = {
 }
 
 const BookItem = () => {
-  console.log('***Invoke***')
   const { bookIsbn } = useParams()
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -48,16 +47,16 @@ const BookItem = () => {
   const fetchData = useCallback(() => {
     const fetchRating = async () => {
       if (!bookIsbn) return
-      console.log('***Fetch***')
+
       const res = await axios.get(
         `/.netlify/functions/get-book-ratings?isbn=${bookIsbn}`
       )
-      console.log('***Fetch -- get response***')
-      if (res.statusText !== 'OK') return
+      setDidFetch(true)
+
+      if (res.status !== 200) return
 
       const { work_ratings_count, average_rating } = res.data.books[0]
 
-      setDidFetch(true)
       setRatings({
         rating: average_rating,
         ratingsCount: work_ratings_count,
@@ -68,7 +67,6 @@ const BookItem = () => {
   }, [bookIsbn])
 
   const selectBook = useCallback(() => {
-    console.log('***Select***')
     const findBook = books && books.find((book) => book.isbn === bookIsbn)
     setBookItem(findBook)
     setIsLoading(false)
@@ -87,9 +85,6 @@ const BookItem = () => {
   const addCartHandler = () => dispatch(addItemToCart(bookItem))
 
   let ratingIdx = Number(rating) + 1
-
-  console.log('Ratings', ratings)
-  console.log('DidFetch', didFetch)
 
   return (
     <>
