@@ -5,11 +5,15 @@ export const BookItemWrap = styled.div`
   padding: 10px 25px;
   font-size: 14px;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 70px 60px min-content min-content min-content;
+  grid-template-rows: 70px 60px repeat(3, min-content);
 
   @media screen and (max-width: 1000px) {
-    grid-template-rows: repeat(5, min-content);
+    grid-template-rows: min-content 80px repeat(3, min-content);
     padding: 10px 15px;
+  }
+
+  @media screen and (max-width: 600px) {
+    grid-template-rows: repeat(5, min-content);
   }
 `
 

@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, memo } from 'react'
 import {
   SubDropdown,
   ShopMenu,
@@ -13,7 +13,7 @@ import {
   selectSeries,
 } from '../../store/books/books.selector'
 
-const ShopNav = () => {
+const ShopNav = memo(() => {
   const [categoriesList, setCategoriesList] = useState(false)
   const [bestsellingList, setBestsellingList] = useState(false)
   const [booksbylangList, setBooksbylangList] = useState(false)
@@ -135,6 +135,6 @@ const ShopNav = () => {
       </li>
     </ShopMenu>
   )
-}
+})
 
 export default ShopNav

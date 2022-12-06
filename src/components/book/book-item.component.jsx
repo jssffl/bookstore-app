@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
@@ -28,7 +28,11 @@ import {
 
 import { addItemToCart } from '../../store/cart/cart.slice'
 import { selectBooks } from '../../store/books/books.selector'
-import { addRatingToBook } from '../../store/books/books.slice'
+
+const defaultRatings = {
+  rating: '',
+  ratingsCount: '',
+}
 
 const BookItem = () => {
   const { bookIsbn } = useParams()
@@ -37,55 +41,48 @@ const BookItem = () => {
   const books = useSelector(selectBooks)
   const [bookItem, setBookItem] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
+  const [ratings, setRatings] = useState(defaultRatings)
 
-  const fetchRatings = async (findBook) => {
-    const res = await axios.get(
-      `/.netlify/functions/get-book-ratings?isbn=${bookIsbn}`
-    )
+  const { rating, ratingsCount } = ratings
 
-    if (res.statusText !== 'OK') return
+  const fetchData = useCallback(() => {
+    const fetchRating = async () => {
+      const res = await axios.get(
+        `/.netlify/functions/get-book-ratings?isbn=${bookIsbn}`
+      )
 
-    const { work_ratings_count, average_rating } = res.data.books[0]
+      if (res.statusText !== 'OK') return
 
-    dispatch(
-      addRatingToBook({
-        isbn: bookIsbn,
+      const { work_ratings_count, average_rating } = res.data.books[0]
+
+      setRatings({
         rating: average_rating,
         ratingsCount: work_ratings_count,
       })
-    )
+    }
 
-    setBookItem({
-      ...findBook,
-      rating: average_rating,
-      ratingsCount: work_ratings_count,
-    })
-  }
+    fetchRating()
+  }, [bookIsbn])
 
-  const selectBook = () => {
-    setIsLoading(true)
+  const selectBook = useCallback(() => {
     const findBook = books && books.find((book) => book.isbn === bookIsbn)
-
     setBookItem(findBook)
     setIsLoading(false)
-
-    if (findBook && !findBook.rating) {
-      try {
-        fetchRatings(findBook)
-      } catch (err) {
-        ////
-      }
-      return
-    }
-  }
+  }, [books, bookIsbn])
 
   useEffect(() => {
+    try {
+      fetchData()
+    } catch (err) {
+      ///
+    }
+
     selectBook()
-  }, [books, bookIsbn])
+  }, [fetchData, selectBook])
 
   const addCartHandler = () => dispatch(addItemToCart(bookItem))
 
-  let ratingIdx = bookItem && Number(bookItem.rating) + 1
+  let ratingIdx = Number(rating) + 1
 
   return (
     <>
@@ -99,37 +96,30 @@ const BookItem = () => {
           <ItemImg>
             <img alt={bookItem.title} src={bookItem.image} />
           </ItemImg>
-
           <MetaInfo>
-            {bookItem &&
-              bookItem.rating &&
-              bookItem.rating > 0 &&
-              bookItem.ratingsCount && (
-                <StarWrap>
-                  {Array.from(Array(Math.ceil(bookItem.rating)).keys()).map(
-                    (_, index) => {
-                      ratingIdx--
-                      if (ratingIdx < 1) {
-                        return <HalfStar key={index} />
-                      } else {
-                        return <FullStar key={index} />
-                      }
-                    }
-                  )}
-
-                  <span>{bookItem.rating}&nbsp;</span>
-                  <RatingWrap>
-                    <span>
-                      &#40;
-                      {bookItem.ratingsCount
-                        .toString()
-                        .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}
-                      &nbsp;
-                    </span>
-                    <span>ratings by Goodreads&#41;</span>
-                  </RatingWrap>
-                </StarWrap>
-              )}
+            {rating && rating > 0 && ratingsCount && (
+              <StarWrap>
+                {Array.from(Array(Math.ceil(rating)).keys()).map((_, index) => {
+                  ratingIdx--
+                  if (ratingIdx < 1) {
+                    return <HalfStar key={index} />
+                  } else {
+                    return <FullStar key={index} />
+                  }
+                })}
+                <span>{rating}&nbsp;</span>
+                <RatingWrap>
+                  <span>
+                    &#40;
+                    {ratingsCount
+                      .toString()
+                      .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}
+                    &nbsp;
+                  </span>
+                  <span>ratings by Goodreads&#41;</span>
+                </RatingWrap>
+              </StarWrap>
+            )}
             <span>Paperback | {bookItem.language}</span>
             <span>by {bookItem.author}</span>
           </MetaInfo>

@@ -37,7 +37,7 @@ const MainLayout = () => {
           </Container>
           <NavBar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
         </>
-      )}{' '}
+      )}
     </>
   )
 }

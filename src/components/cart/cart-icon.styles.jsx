@@ -12,8 +12,8 @@ export const CartIconContainer = styled.div`
   color: #d0d0d0;
 
   img {
-    width: 22.5px;
-    height: 22.5px;
+    width: 27px;
+    height: 27px;
 
     filter: invert(88%) sepia(0%) saturate(77%) hue-rotate(277deg)
       brightness(101%) contrast(90%);
@@ -37,5 +37,5 @@ export const ItemCount = styled.span`
   position: absolute;
   font-size: 10px;
   font-weight: bold;
-  top: 43%;
+  top: 45%;
 `
