@@ -33,7 +33,7 @@ const Header = () => {
       <PrimaryWrap>
         <PrimaryContainer>
           <LogoContainer to='/'>
-            <img src={logo} alt='log' />
+            <img src={logo} alt='logo' />
             <h1>Bookstore</h1>
           </LogoContainer>
           <SearchForm />

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import Footer from '../../components/footer/footer.component'
 import Header from '../../components/header/header.component'
-import { Container } from './main-layout.styles'
+import { Container, ContentWrap } from './main-layout.styles'
 import NavBar from '../../components/header/navbar.component'
 
 import { selectFetchBooksIsLoading } from '../../store/books/books.selector'
@@ -32,7 +32,9 @@ const MainLayout = () => {
             onClick={isMenuOpen ? closeMenu : () => {}}
           >
             <Header />
-            <Outlet />
+            <ContentWrap>
+              <Outlet />
+            </ContentWrap>
             <Footer />
           </Container>
           <NavBar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />

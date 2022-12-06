@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro'
 
 export const CartContainer = styled.div`
-  grid-column: center-start / center-end;
+  width: 100%;
   padding: 20px 20px 10px 20px;
 
   margin: 10px;
@@ -25,7 +25,7 @@ export const CartContainer = styled.div`
 `
 
 export const Total = styled.div`
-  grid-column: center-start / center-end;
+  width: 100%;
   padding: 15px 20px;
   margin: 0px 10px 10px 10px;
   display: flex;

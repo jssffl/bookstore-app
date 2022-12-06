@@ -9,6 +9,7 @@ export const CartIconContainer = styled.div`
   justify-content: center;
   cursor: pointer;
   padding: 5px;
+  margin-right: 10px;
   color: #d0d0d0;
 
   img {

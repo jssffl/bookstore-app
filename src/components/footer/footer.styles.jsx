@@ -18,7 +18,7 @@ export const TheFooter = styled.footer`
   }
 
   @media screen and (max-width: 600px) {
-    padding: 30px 20px;
+    padding: 30px 5px;
     justify-content: center;
   }
 `
@@ -74,6 +74,7 @@ export const CopyText = styled.div`
 
   img {
     width: 50px;
+    height: 50px;
     margin-bottom: 10px;
   }
 
@@ -87,6 +88,7 @@ export const CopyText = styled.div`
 
     img {
       width: 35px;
+      height: 35px;
       margin-right: 15px;
       margin-bottom: 0;
     }

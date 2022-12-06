@@ -17,12 +17,11 @@ const BookNewReleases = () => {
   return (
     <>
       <ContentWrap>
-        <BaseBanner>
-          <BannerTitle>News Releases</BannerTitle>
-        </BaseBanner>
+        <BannerTitle show={true}>News Releases</BannerTitle>
+
         <ProductsWrap>
           {products &&
-            products.map((item) => <BookCard item={item} key={item.id} />)}
+            products.map((item) => <BookCard key={item.id} item={item} />)}
         </ProductsWrap>
       </ContentWrap>
     </>

@@ -4,11 +4,6 @@ import { Link } from 'react-router-dom'
 
 import headerBg from '../../assets/header-bg.png'
 
-export const fullContainer = `
-  grid-column: full-start / full-end;
-  height: 100%;
-`
-
 export const centerContainer = `
  max-width: 1440px;
  margin: 0 auto;
@@ -22,20 +17,16 @@ export const flexContainer = `
 `
 
 export const TheHeader = styled.header`
-  ${fullContainer};
-
-  height: 100%;
+  width: 100%;
+  height: 160px;
   font-size: 14px;
   background: url(${headerBg}) #001950 repeat;
   position: relative;
-
-  display: grid;
-  grid-template-rows: 44px 76px 40px;
 `
 
 export const PrimaryWrap = styled.div`
   width: 100%;
-  height: 100%;
+  height: 76px;
   padding: 0 10px;
 `
 export const PrimaryContainer = styled.div`
@@ -84,7 +75,6 @@ export const UserNavWrap = styled.div`
 export const UserNavContainer = styled.div`
   ${centerContainer}
   display: flex;
-
   position: relative;
 
   @media screen and (max-width: 900px) {
@@ -137,6 +127,7 @@ export const PromotionBannerWrap = styled.div`
   @media screen and (max-width: 900px) {
     ${centerContainer};
     width: 100%;
+    height: 40px;
     position: relative;
     transform: translateX(0);
     left: 0;

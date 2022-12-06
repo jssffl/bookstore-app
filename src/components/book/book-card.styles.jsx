@@ -13,32 +13,6 @@ export const singleEllipsis = `
   -webkit-line-clamp: 1;
   overflow: hidden;
 `
-export const BookCardWrap = styled.div`
-  display: block;
-  width: 140px;
-  height: 280px;
-  font-size: 14px;
-  padding: 5px 10px;
-  color: #444;
-
-  button {
-    width: 100%;
-    border-radius: 10px;
-    margin-top: 5px;
-  }
-`
-
-export const ImgWrap = styled.div`
-  height: 140px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-
-  img {
-    height: 100%;
-    width: 100%;
-  }
-`
 
 export const InfoWrap = styled.div`
   height: 95px;
@@ -74,6 +48,40 @@ export const InfoWrap = styled.div`
 export const AuthorWrap = styled.p`
   font-size: 10px;
   ${singleEllipsis}
+`
+
+export const BookCardWrap = styled.div`
+  display: block;
+
+  padding: 5px 10px;
+  color: #444;
+
+  width: 140px;
+  height: 280px;
+
+  font-size: 14px;
+
+  button {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 5px;
+  }
+
+  @media screen and (max-width: 450px) {
+    width: '165px';
+  }
+`
+
+export const ImgWrap = styled.div`
+  height: 140px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
 `
 
 export const PriceWrap = styled.p`

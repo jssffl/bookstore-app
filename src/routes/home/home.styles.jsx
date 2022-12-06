@@ -3,7 +3,6 @@ import { MainContentWrap } from '../../components/UI/main.content.styles'
 import { SideBar } from '../../components/UI/sidebar.styles'
 
 export const BannerWrap = styled.div`
-  grid-column: 1 /-1;
   height: 180px;
   background-color: #fff;
   margin-bottom: 5px;
@@ -43,7 +42,6 @@ export const BannerWrap = styled.div`
 `
 
 export const PanelWrap = styled.div`
-  grid-column: 1 /-1;
   height: 350px;
   background-color: #fff;
   margin-bottom: 5px;
@@ -73,6 +71,7 @@ export const BlogWrap = styled.div`
 
   @media screen and (max-width: 700px) {
     text-align: center;
+
     img {
       height: 180px;
     }
@@ -113,18 +112,19 @@ export const ClubWrap = styled.div`
 
 export const HomeSideBar = styled(SideBar)`
   @media screen and (max-width: 700px) {
-    grid-column: center-start/ center-end;
-    grid-row: 3/4;
-    display: flex;
+    order: 1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     padding: 0;
-    margin: 10px 20px;
+    margin: 5px 10px;
     height: 220px;
+    background-color: #fff;
   }
 `
 export const HomeContentWrap = styled(MainContentWrap)`
   @media screen and (max-width: 700px) {
-    grid-column: center-start/ center-end;
-    padding: 0;
-    margin: 10px 20px;
+    width: 100%;
+    padding: 10px 10px 0px 10px;
   }
 `

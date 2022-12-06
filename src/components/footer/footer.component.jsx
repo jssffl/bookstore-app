@@ -39,7 +39,7 @@ const Footer = () => {
           </ul>
         </NavFooterCol>
         <NavFooterCol>
-          <h6>How can we help?</h6>
+          <h6>Let us help you</h6>
           <ul>
             <li>
               <Link to='#'>Contact us</Link>

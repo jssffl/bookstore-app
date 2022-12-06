@@ -22,8 +22,12 @@ const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields)
   const { email, password } = formFields
   const [error, setError] = useState(null)
-
+  // const navigation = useNavigation()
   const navigate = useNavigate()
+
+  // console.log('navigate', navigate)
+  // console.log('navigation', navigation)
+
   const resetFormField = () => {
     setFormFields(defaultFormFields)
   }
@@ -39,8 +43,6 @@ const SignInForm = () => {
 
       setFormFields(defaultFormFields)
     } catch (error) {
-      console.log('user sign in failed', error)
-
       switch (error.code) {
         case 'auth/wrong-password':
           setError('Incorrect  Email or password ')
@@ -60,8 +62,9 @@ const SignInForm = () => {
   }
 
   const signInWithGoogle = async () => {
-    const response = await signInWithGooglePopup()
-    console.log(response)
+    await signInWithGooglePopup()
+    resetFormField()
+    navigate('/')
   }
 
   return (

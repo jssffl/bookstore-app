@@ -4,13 +4,17 @@ import chevronDownIcon from '../../assets/chevron-thin-down.svg'
 
 export const CheckoutWrap = styled.div`
   display: flex;
-  grid-column: center-start / center-end;
+  width: 100%;
   margin: 10px;
   font-size: 14px;
   color: #333;
 
   h2 {
     font-size: 18px;
+  }
+
+  @media screen and (max-width: 500px) {
+    margin: 10px 0;
   }
 `
 export const PaymentInfo = styled.div`

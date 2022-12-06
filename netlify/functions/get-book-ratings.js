@@ -6,7 +6,7 @@ exports.handler = async (event) => {
 
   try {
     res = await axios.get(
-      ` https://www.goodreads.com/book/review_counts.json?isbns=${isbn}`
+      `https://www.goodreads.com/book/review_counts.json?isbns=${isbn}`
     )
   } catch (err) {
     return {

@@ -4,16 +4,18 @@ import { useParams } from 'react-router-dom'
 
 import { selectLanguage } from '../../store/books/books.selector'
 import BookCard from '../../components/book/book-card.component'
-import SideBarWrap from '../../components/UI/sidebar.component'
+
 import MainContentWrap from '../../components/UI/main-content.component'
 import BaseBanner from '../../components/UI/base-banner.component'
 
 import {
   ProductsWrap,
-  Sidebar,
+  ShopSideBarWrap,
+  ShopSideBar,
   Heading,
   BaseLink,
   BannerTitle,
+  ShopContentWrap,
 } from './book-shop.styles.'
 import { ReactComponent as ChevronRight } from '../../assets/chevron-left.svg'
 
@@ -28,8 +30,8 @@ const BookLanguage = () => {
 
   return (
     <>
-      <SideBarWrap>
-        <Sidebar>
+      <ShopSideBarWrap>
+        <ShopSideBar>
           <Heading to='/'>
             <ChevronRight width='25' heigh='25' />
             <h3>Back to Homepage</h3>
@@ -44,19 +46,18 @@ const BookLanguage = () => {
                 </li>
               ))}
           </ul>
-        </Sidebar>
-      </SideBarWrap>
-      <MainContentWrap>
-        <BaseBanner>
-          <BannerTitle>
-            Featured <span>{lang}</span>
-          </BannerTitle>
-        </BaseBanner>
+        </ShopSideBar>
+      </ShopSideBarWrap>
+      <ShopContentWrap>
+        <BannerTitle>
+          Featured <span>{lang}</span>
+        </BannerTitle>
+
         <ProductsWrap>
           {products &&
             products.map((item) => <BookCard item={item} key={item.id} />)}
         </ProductsWrap>
-      </MainContentWrap>
+      </ShopContentWrap>
     </>
   )
 }

@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro'
 
 export const EmptyCartWrap = styled.div`
-  grid-column: center-start / center-end;
+  width: 100%;
   margin: 10px;
   font-size: 14px;
 
@@ -39,5 +39,7 @@ export const ButtonWrap = styled.div`
 
   button {
     margin: 0 auto;
+    background-color: #ccc;
+    color: #fff;
   }
 `
