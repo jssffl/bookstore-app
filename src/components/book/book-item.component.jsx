@@ -45,7 +45,7 @@ const BookItem = () => {
 
     if (res.statusText !== 'OK') return
 
-    const { work_ratings_count, average_rating } = res.data.data.books[0]
+    const { work_ratings_count, average_rating } = res.data.books[0]
 
     dispatch(
       addRatingToBook({
