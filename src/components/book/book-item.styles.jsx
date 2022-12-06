@@ -5,10 +5,16 @@ export const BookItemWrap = styled.div`
   padding: 10px 25px;
   font-size: 14px;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 70px 60px repeat(3, min-content);
+  grid-template-rows: minmax(45px, min-content) minmax(60px, min-content) repeat(
+      3,
+      min-content
+    );
 
   @media screen and (max-width: 1000px) {
-    grid-template-rows: min-content 80px repeat(3, min-content);
+    grid-template-rows: min-content minmax(60px, min-content) repeat(
+        3,
+        min-content
+      );
     padding: 10px 15px;
   }
 
@@ -20,7 +26,7 @@ export const BookItemWrap = styled.div`
 export const ItemTitle = styled.div`
   grid-column: 2/4;
   background-color: #fff;
-  padding: 15px 10px 10px 0;
+  padding: 20px 10px 10px 0;
 
   h2 {
     font-size: 20px;
@@ -34,7 +40,7 @@ export const ItemTitle = styled.div`
     h2 {
       border-bottom: 1px solid var(--color-grey-light-1);
       text-align: center;
-      padding: 5px 20px 10px;
+      padding: 5px 20px;
     }
   }
 
@@ -48,7 +54,7 @@ export const ItemTitle = styled.div`
 `
 
 export const ItemImg = styled.div`
-  padding: 10px 25px 30px 25px;
+  padding: 20px 35px;
   background-color: #fff;
   grid-column: 1/2;
   grid-row: 1/4;
@@ -110,7 +116,7 @@ export const MetaInfo = styled.div`
   display: flex;
   flex-direction: column;
 
-  span {
+  p span {
     text-transform: capitalize;
   }
 
@@ -136,7 +142,7 @@ export const StarWrap = styled.div`
     margin: 0;
   }
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 750px) {
     flex-wrap: wrap;
     height: auto;
 

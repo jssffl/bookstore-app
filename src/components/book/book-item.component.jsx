@@ -35,6 +35,7 @@ const defaultRatings = {
 }
 
 const BookItem = () => {
+  console.log('***Invoke***')
   const { bookIsbn } = useParams()
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -42,11 +43,12 @@ const BookItem = () => {
   const [bookItem, setBookItem] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const [ratings, setRatings] = useState(defaultRatings)
-
   const { rating, ratingsCount } = ratings
-
+  const [didFetch, setDidFetch] = useState(false)
   const fetchData = useCallback(() => {
     const fetchRating = async () => {
+      if (!bookIsbn) return
+
       const res = await axios.get(
         `/.netlify/functions/get-book-ratings?isbn=${bookIsbn}`
       )
@@ -55,6 +57,7 @@ const BookItem = () => {
 
       const { work_ratings_count, average_rating } = res.data.books[0]
 
+      setDidFetch(true)
       setRatings({
         rating: average_rating,
         ratingsCount: work_ratings_count,
@@ -86,6 +89,7 @@ const BookItem = () => {
 
   return (
     <>
+      {console.log('***Render***')}
       {isLoading || !bookItem ? (
         <Spinner fullWidth={true} />
       ) : (
@@ -97,7 +101,9 @@ const BookItem = () => {
             <img alt={bookItem.title} src={bookItem.image} />
           </ItemImg>
           <MetaInfo>
-            {rating && rating > 0 && ratingsCount && (
+            {didFetch && !rating && <p>&#40;No ratings by Goodreads&#41;</p>}
+
+            {didFetch && rating && (
               <StarWrap>
                 {Array.from(Array(Math.ceil(rating)).keys()).map((_, index) => {
                   ratingIdx--
@@ -120,8 +126,11 @@ const BookItem = () => {
                 </RatingWrap>
               </StarWrap>
             )}
-            <span>Paperback | {bookItem.language}</span>
-            <span>by {bookItem.author}</span>
+
+            <p>
+              Paperback &nbsp; | <span>&nbsp;{bookItem.language}</span>
+            </p>
+            <p>By {bookItem.author}</p>
           </MetaInfo>
           <ItemDescription>
             <BlockTitle isVisible={true}>Description</BlockTitle>
