@@ -14,9 +14,12 @@ export const BannerWrap = styled.div`
   }
 
   @media screen and (max-width: 600px) {
-    height: 100px;
+    height: 120px;
   }
 
+  @media screen and (max-width: 500px) {
+    height: 100px;
+  }
   a {
     height: 100%;
     width: 100%;
