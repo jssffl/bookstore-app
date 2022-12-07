@@ -83,7 +83,5 @@ export const MessageBanner = styled.div`
     padding: 10px 0;
   }
 
-  ${(props) => {
-    return props.error ? errorBanner : successBanner
-  }}
+  ${({ error }) => (error ? errorBanner : successBanner)}
 `

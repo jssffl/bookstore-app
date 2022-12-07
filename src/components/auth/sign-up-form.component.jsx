@@ -29,6 +29,7 @@ const SignUpForm = () => {
   const navigate = useNavigate()
   const submitHandler = async (e) => {
     e.preventDefault()
+    setError(null)
     setIsloading(true)
     try {
       const { user } = await createAuthUserWithEmailAndPassword(email, password)

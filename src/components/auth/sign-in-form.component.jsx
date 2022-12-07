@@ -31,7 +31,9 @@ const SignInForm = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault()
+    setError(null)
     setIsloading(true)
+
     try {
       await signInAuthUserWithEmailAndPassword(email, password)
 
