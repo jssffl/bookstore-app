@@ -11,7 +11,7 @@ const Footer = () => {
     <TheFooter>
       <NavFooterRow>
         <NavFooterCol>
-          <div>Company</div>
+          <h6>Company</h6>
           <ul>
             <li>
               <Link to='#'>About us</Link>
@@ -25,7 +25,7 @@ const Footer = () => {
           </ul>
         </NavFooterCol>
         <NavFooterCol>
-          <div>Work with us</div>
+          <h6>Work with us</h6>
           <ul>
             <li>
               <Link to='#'>Jobs</Link>
@@ -39,7 +39,7 @@ const Footer = () => {
           </ul>
         </NavFooterCol>
         <NavFooterCol>
-          <div>Let us help you</div>
+          <h6>Let us help you</h6>
           <ul>
             <li>
               <Link to='#'>Contact us</Link>
