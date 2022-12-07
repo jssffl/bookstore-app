@@ -10,10 +10,10 @@ const PromotionBanner = () => {
       </PrimaryBanner>
       <SecondaryBanner to='/'>
         <img src={promotionIcon} alt='promotion icon' />
-        <p>
+        <div>
           Christmas Sales
           <span>Click Here &rarr;</span>
-        </p>
+        </div>
       </SecondaryBanner>
     </>
   )

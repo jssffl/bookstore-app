@@ -2,6 +2,9 @@ import styled from 'styled-components/macro'
 
 export const Container = styled.div`
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   ::after {
     content: '';
@@ -18,10 +21,14 @@ export const Container = styled.div`
 `
 
 export const ContentWrap = styled.div`
-  max-width: 1440px;
+  width: 1440px;
   margin: 0 auto;
   padding: 10px;
   display: flex;
+
+  @media screen and (max-width: 1440px) {
+    width: 100%;
+  }
 
   @media screen and (max-width: 700px) {
     flex-wrap: wrap;

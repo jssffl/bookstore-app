@@ -8,6 +8,7 @@ export const TheFooter = styled.footer`
   padding: 25px 80px;
   display: flex;
   flex-wrap: wrap;
+  margin-top: auto;
 
   a {
     color: #ddd;

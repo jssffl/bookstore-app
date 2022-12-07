@@ -9,24 +9,24 @@ const EmptyCart = () => {
       <Message>
         <h3>Still wondering what to buy?</h3>
         <p>Explore our bestsellers to find your favorite books!</p>
-        <CustomButton
-          onClick={() => {
-            navigate('/bestsellers')
-          }}
-          buttonType='add'
-        >
-          Browser Bestsellers
-        </CustomButton>
+        <ButtonWrap>
+          <CustomButton
+            onClick={() => {
+              navigate('/bestsellers')
+            }}
+            buttonType='add'
+          >
+            Browser Bestsellers
+          </CustomButton>
+          <CustomButton
+            onClick={() => {
+              navigate('/')
+            }}
+          >
+            Continue shopping
+          </CustomButton>
+        </ButtonWrap>
       </Message>
-      <ButtonWrap>
-        <CustomButton
-          onClick={() => {
-            navigate('/')
-          }}
-        >
-          Continue shopping
-        </CustomButton>
-      </ButtonWrap>
     </EmptyCartWrap>
   )
 }
