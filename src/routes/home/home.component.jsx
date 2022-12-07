@@ -12,7 +12,10 @@ import {
 import { BlockWrap } from '../../components/UI/block-wrap.styles'
 import BaseCarousel from '../../components/UI/base-carousel.component'
 import BookCard from '../../components/book/book-card.component'
-
+import ClubImg from '../../assets/book-club.webp'
+import blogImg from '../../assets/sidebar-img.webp'
+import christmasLg from '../../assets/christmas-lg.webp'
+import christmasSm from '../../assets/christmas-sm.webp'
 import {
   selectBestsellers,
   selectNewReleases,
@@ -27,19 +30,13 @@ const Home = () => {
       <HomeSideBar>
         <BlockWrap>
           <ClubWrap>
-            <img
-              src='https://res.cloudinary.com/dqs1cwcmp/image/upload/v1670388900/Bookstore/book-club_mqswic.webp'
-              alt=''
-            />
+            <img src={ClubImg} alt='club' />
             <p>Check out what's hot</p>
           </ClubWrap>
         </BlockWrap>
         <BlockWrap>
           <BlogWrap>
-            <img
-              src='https://res.cloudinary.com/dqs1cwcmp/image/upload/c_scale,h_300/v1670388097/Bookstore/sidebar-img_cjw2i4.webp'
-              alt='blog'
-            />
+            <img src={blogImg} alt='blog' />
             <p>Check out our blog</p>
           </BlogWrap>
         </BlockWrap>
@@ -47,14 +44,8 @@ const Home = () => {
       <HomeContentWrap>
         <BannerWrap>
           <picture>
-            <source
-              media='(max-width: 900px)'
-              srcSet='https://res.cloudinary.com/dqs1cwcmp/image/upload/v1670387509/Bookstore/christmas-sm_fpsgcl.webp'
-            />
-            <img
-              src='https://res.cloudinary.com/dqs1cwcmp/image/upload/v1670386671/Bookstore/christmas-lg_wg7dqd.webp'
-              alt='banner'
-            />
+            <source media='(max-width: 900px)' srcSet={christmasSm} />
+            <img src={christmasLg} alt='banner' />
           </picture>
         </BannerWrap>
 
