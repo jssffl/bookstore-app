@@ -11,6 +11,10 @@ export const Form = styled.form`
   }
 
   @media screen and (max-width: 800px) {
+    width: 80%;
+  }
+
+  @media screen and (max-width: 600px) {
     width: 100%;
   }
 `

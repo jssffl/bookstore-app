@@ -14,11 +14,11 @@ const PaymentForm = () => {
   const currentUser = useSelector(selectCurrentUser)
   const [isProcessingPayment, setIsProcessingPayment] = useState(false)
   const navigate = useNavigate()
-
   const dispatch = useDispatch()
 
   const paymentHandler = async (e) => {
     e.preventDefault()
+
     if (!stripe || !elements) {
       return
     }

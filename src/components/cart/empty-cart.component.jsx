@@ -1,4 +1,4 @@
-import { EmptyCartWrap, Message, ButtonWrap } from './empty-cat.styles'
+import { EmptyCartWrap, Message, ButtonWrap } from './empty-cart.styles'
 import CustomButton from '../UI/button.component'
 import { useNavigate } from 'react-router-dom'
 const EmptyCart = () => {

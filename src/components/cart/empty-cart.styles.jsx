@@ -19,7 +19,7 @@ export const EmptyCartWrap = styled.div`
   }
 `
 
-export const Message = styled.p`
+export const Message = styled.div`
   background-color: #fff;
   margin: 10px 0;
   padding: 20px 10px;

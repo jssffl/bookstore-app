@@ -21,14 +21,23 @@ import {
   MobileToggleDropdown,
 } from './checkout.styles'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { loadStripe } from '@stripe/stripe-js'
+import { Elements } from '@stripe/react-stripe-js'
 
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems)
   const cartTotal = useSelector(selectCartTotal)
   const cartCount = useSelector(selectCartCount)
 
+  const [stripePromise, setStripePromise] = useState(null)
+  useEffect(() => {
+    setStripePromise(
+      loadStripe(`${process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}`)
+    )
+  }, [])
   const [open, setOpen] = useState(false)
+
   return (
     <CheckoutWrap>
       <PaymentInfo>
@@ -92,7 +101,9 @@ const Checkout = () => {
           </UserInfo>
         </BlockWrap>
         <BlockWrap>
-          <PaymentForm />
+          <Elements stripe={stripePromise}>
+            <PaymentForm />
+          </Elements>
         </BlockWrap>
       </PaymentInfo>
       <OrderWrap>
