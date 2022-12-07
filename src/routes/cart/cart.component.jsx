@@ -7,7 +7,7 @@ import {
 import CustomButton from '../../components/UI/button.component'
 import CartItem from '../../components/cart/cart-item.component'
 import EmptyCart from '../../components/cart/empty-cart.component'
-import { CartContainer, Total } from './cart.styles'
+import { CartContainer, CartWrap, Total } from './cart.styles'
 
 const Cart = () => {
   const cartItems = useSelector(selectCartItems)
@@ -18,7 +18,7 @@ const Cart = () => {
     <>
       {cartItems && cartItems.length === 0 && <EmptyCart />}
       {cartItems && cartItems.length > 0 && (
-        <>
+        <CartWrap>
           <CartContainer>
             <h1>Shopping Cart</h1>
             {cartItems.map((cartItem) => (
@@ -43,7 +43,7 @@ const Cart = () => {
               Checkout
             </CustomButton>
           </Total>
-        </>
+        </CartWrap>
       )}
     </>
   )

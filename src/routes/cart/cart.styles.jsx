@@ -1,10 +1,14 @@
 import styled from 'styled-components/macro'
 
+export const CartWrap = styled.div`
+  width: 100%;
+  margin: 10px;
+`
+
 export const CartContainer = styled.div`
   width: 100%;
   padding: 20px 20px 10px 20px;
-
-  margin: 10px;
+  margin-bottom: 10px;
   background-color: #fff;
 
   h1 {
@@ -27,7 +31,7 @@ export const CartContainer = styled.div`
 export const Total = styled.div`
   width: 100%;
   padding: 15px 20px;
-  margin: 0px 10px 10px 10px;
+
   display: flex;
   flex-direction: column;
   background-color: #fff;
