@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
-
 import BookCard from '../../components/book/book-card.component'
-
-import BaseBanner from '../../components/UI/base-banner.component'
 import { selectBestsellers } from '../../store/books/books.selector'
 import { ProductsWrap, ContentWrap, BannerTitle } from './book-shop.styles.'
 

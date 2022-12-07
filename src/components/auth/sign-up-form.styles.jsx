@@ -35,13 +35,17 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 576px) {
-    padding: 40px 50px;
+    padding: 40px 30px;
+  }
+
+  @media screen and (max-width: 400px) {
+    padding: 30px 20px;
   }
 `
 
 export const SignUpContainer = styled(Container)`
   h2 {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
   @media screen and (max-width: 700px) {
     height: 470px;

@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
+import { Link } from 'react-router-dom'
 import { MainContentWrap } from '../../components/UI/main.content.styles'
 import { SideBar } from '../../components/UI/sidebar.styles'
 

@@ -1,12 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-
 import { selectLanguage } from '../../store/books/books.selector'
 import BookCard from '../../components/book/book-card.component'
-
-import MainContentWrap from '../../components/UI/main-content.component'
-import BaseBanner from '../../components/UI/base-banner.component'
 
 import {
   ProductsWrap,

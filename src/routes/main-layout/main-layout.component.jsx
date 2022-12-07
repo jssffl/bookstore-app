@@ -23,23 +23,21 @@ const MainLayout = () => {
 
   return (
     <>
-      {isLoading ? (
-        <Spinner fullWidth='true' />
-      ) : (
-        <>
-          <Container
-            isMenuOpen={isMenuOpen}
-            onClick={isMenuOpen ? closeMenu : () => {}}
-          >
-            <Header />
-            <ContentWrap>
-              <Outlet />
-            </ContentWrap>
-            <Footer />
-          </Container>
-          <NavBar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-        </>
-      )}
+      <Container
+        isMenuOpen={isMenuOpen}
+        onClick={isMenuOpen ? closeMenu : () => {}}
+      >
+        <Header />
+        {isLoading ? (
+          <Spinner fullWidth='true' />
+        ) : (
+          <ContentWrap>
+            <Outlet />
+          </ContentWrap>
+        )}
+        <Footer />
+      </Container>
+      <NavBar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
     </>
   )
 }

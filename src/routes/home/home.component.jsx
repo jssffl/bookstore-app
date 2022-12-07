@@ -37,7 +37,7 @@ const Home = () => {
         <BlockWrap>
           <BlogWrap>
             <img
-              src='https://res.cloudinary.com/dqs1cwcmp/image/upload/v1670388097/Bookstore/sidebar-img_cjw2i4.webp'
+              src='https://res.cloudinary.com/dqs1cwcmp/image/upload/c_scale,h_300/v1670388097/Bookstore/sidebar-img_cjw2i4.webp'
               alt='blog'
             />
             <p>Check out our blog</p>

@@ -22,11 +22,8 @@ const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields)
   const { email, password } = formFields
   const [error, setError] = useState(null)
-  // const navigation = useNavigation()
+  const [isLoading, setIsloading] = useState(false)
   const navigate = useNavigate()
-
-  // console.log('navigate', navigate)
-  // console.log('navigation', navigation)
 
   const resetFormField = () => {
     setFormFields(defaultFormFields)
@@ -34,7 +31,7 @@ const SignInForm = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault()
-
+    setIsloading(true)
     try {
       await signInAuthUserWithEmailAndPassword(email, password)
 
@@ -53,6 +50,8 @@ const SignInForm = () => {
         default:
           setError('Something went wrong, please try later!')
       }
+    } finally {
+      setIsloading(false)
     }
   }
 
@@ -93,7 +92,7 @@ const SignInForm = () => {
           }}
         />
         <ButtonContainer>
-          <CustomButton type='submit' buttonType='add'>
+          <CustomButton isLoading={isLoading} type='submit' buttonType='add'>
             SIGN IN
           </CustomButton>
           <CustomButton

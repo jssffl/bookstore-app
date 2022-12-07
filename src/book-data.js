@@ -44,7 +44,7 @@ export const BOOK_DATA = [
         description:
           "Ray Dalio, one of the world's most successful investors and entrepreneurs, shares the unconventional principles that he’s developed, refined, and used over the past forty years to create unique results in both Life and business—and which any person or organization can adopt to help achieve their goals.",
         image:
-          'https://res.cloudinary.com/dqs1cwcmp/image/upload/v1670388096/Bookstore/principles_psp2pu.webp',
+          'https://res.cloudinary.com/dqs1cwcmp/image/upload/c_scale,w_600/v1670388096/Bookstore/principles_psp2pu.webp',
         publicationDate: 'September 19, 2017',
         language: 'english',
         category: 'Life',
@@ -127,7 +127,7 @@ export const BOOK_DATA = [
         description:
           'In his 1997 work Guns, Germs and Steel, Jared Diamond marshals evidence from five continents and across 13,000 years of human history in an attempt to answer the question of why that history unfolded so differently in various parts of the globe. His results offer new explanations for why the unequal divisions of power and wealth so familiar to us today came into existence – and have persisted.',
         image:
-          'https://res.cloudinary.com/dqs1cwcmp/image/upload/v1670388095/Bookstore/guns-germs-and-steel-the-fates-of-human-societies_zyluut.webp',
+          'https://res.cloudinary.com/dqs1cwcmp/image/upload/c_scale,w_600/v1670388095/Bookstore/guns-germs-and-steel-the-fates-of-human-societies_zyluut.webp',
         publicationDate: 'April 1, 1999',
         language: 'english',
         category: 'Social-Sciences',
@@ -143,7 +143,7 @@ export const BOOK_DATA = [
         description:
           'In Sapiens, Dr Yuval Noah Harari spans the whole of human history, from the very first humans to walk the earth to the radical – and sometimes devastating – breakthroughs of the Cognitive, Agricultural and Scientific Revolutions. Drawing on insights from biology, anthropology, paleontology and economics, he explores how the currents of history have shaped our human societies, the animals and plants around us, and even our personalities. Have we become happier as history has unfolded? Can we ever free our behaviour from the heritage of our ancestors? And what, if anything, can we do to influence the course of the centuries to come?',
         image:
-          'https://res.cloudinary.com/dqs1cwcmp/image/upload/v1670388097/Bookstore/sapiens_gsuwgs.webp',
+          'https://res.cloudinary.com/dqs1cwcmp/image/upload/c_scale,w_600/v1670388097/Bookstore/sapiens_gsuwgs.webp',
         publicationDate: '2011',
         language: 'english',
         category: 'Social-Sciences',
@@ -177,7 +177,7 @@ export const BOOK_DATA = [
         description:
           "Rich Dad Poor Dad is Robert's story of growing up with two dads — his real father and the father of his best friend, his 'rich dad' — and the ways in which both men shaped his thoughts about money and investing. The book explodes the myth that you need to earn a high income to be rich and explains the difference between working for money and having your money work for you.",
         image:
-          'https://res.cloudinary.com/dqs1cwcmp/image/upload/v1670388097/Bookstore/rich-dad-poor-dad_tmwavi.webp',
+          'https://res.cloudinary.com/dqs1cwcmp/image/upload/c_scale,w_600/v1670388097/Bookstore/rich-dad-poor-dad_tmwavi.webp',
         publicationDate: 'April 11, 2017',
         language: 'english',
         category: 'Social-Sciences',
@@ -228,7 +228,7 @@ export const BOOK_DATA = [
         description:
           'Few stories are as widely read and as universally cherished by children and adults alike as The Little Prince, presented here in a stunning new translation with carefully restored artwork. The definitive edition of a worldwide classic, it will capture the hearts of readers of all ages.',
         image:
-          'https://res.cloudinary.com/dqs1cwcmp/image/upload/v1670388097/Bookstore/the-little-prince_p5q3lh.webp',
+          'https://res.cloudinary.com/dqs1cwcmp/image/upload/c_scale,w_600/v1670388097/Bookstore/the-little-prince_p5q3lh.webp',
         publicationDate: 'May 15, 2000',
         language: 'english',
         category: 'Comic-Book',

@@ -10,12 +10,10 @@ import {
   PromotionBannerWrap,
   DeskWrap,
 } from './header.styles'
-
 import UserNav from './user-nav.component'
 import ShopNav from './shop-nav.component'
 import SearchForm from './search-form.component'
 import PromotionBanner from './promotion-banner.component'
-
 import logo from '../../assets/logo.png'
 import CartIcon from '../cart/cart-icon.component'
 

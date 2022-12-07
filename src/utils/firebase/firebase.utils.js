@@ -4,13 +4,15 @@ import { initializeApp } from 'firebase/app'
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 import {
-  getAuth,
   signInWithPopup,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
+  initializeAuth,
+  indexedDBLocalPersistence,
+  browserPopupRedirectResolver,
 } from 'firebase/auth'
 import {
   getFirestore,
@@ -24,7 +26,7 @@ import {
 } from 'firebase/firestore'
 // Your web app's Firebase configuration
 
-import { BOOK_DATA } from '../../book-data'
+// import { BOOK_DATA } from '../../book-data'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDN_3MEQPOqjvBiLXaa3uKiscHiyAJehFI',
@@ -42,8 +44,12 @@ provider.setCustomParameters({
   prompt: 'select_account',
 })
 
-const auth = getAuth()
-export const signInWithGooglePopup = () => signInWithPopup(auth, provider)
+const auth = initializeAuth(app, {
+  persistence: [indexedDBLocalPersistence],
+})
+
+export const signInWithGooglePopup = () =>
+  signInWithPopup(auth, provider, browserPopupRedirectResolver)
 
 const db = getFirestore(app)
 

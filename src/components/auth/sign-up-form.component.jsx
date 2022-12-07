@@ -12,6 +12,7 @@ import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from '../../utils/firebase/firebase.utils'
+import { useNavigate } from 'react-router-dom'
 
 const defaultFormFields = {
   displayName: '',
@@ -22,21 +23,24 @@ const defaultFormFields = {
 const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields)
   const { displayName, email, password } = formFields
-
   const [message, setMessage] = useState(null)
-
+  const [error, setError] = useState(null)
+  const [isLoading, setIsloading] = useState(false)
+  const navigate = useNavigate()
   const submitHandler = async (e) => {
     e.preventDefault()
-
+    setIsloading(true)
     try {
       const { user } = await createAuthUserWithEmailAndPassword(email, password)
       await createUserDocumentFromAuth(user, { displayName })
-      setMessage('Signup successfully!')
 
+      setMessage('Signup successfully! Redirect to homepage in 2 second...')
       setFormFields(defaultFormFields)
+      setTimeout(() => {
+        navigate('/')
+      }, 2500)
     } catch (error) {
-      console.log(error.code)
-
+      setError(error.code)
       switch (error.code) {
         case 'auth/email-already-in-use':
           setMessage('Email already in use!')
@@ -47,6 +51,8 @@ const SignUpForm = () => {
         default:
           setMessage('Something went wrong, please try later!')
       }
+    } finally {
+      setIsloading(false)
     }
   }
 
@@ -92,11 +98,13 @@ const SignUpForm = () => {
         />
 
         <ButtonContainer>
-          <CustomButton buttonType='add'>SIGN UP</CustomButton>
+          <CustomButton isLoading={isLoading} buttonType='add'>
+            SIGN UP
+          </CustomButton>
         </ButtonContainer>
       </form>
       {message && (
-        <MessageBanner error={message}>
+        <MessageBanner error={error}>
           <p>{message}</p>
         </MessageBanner>
       )}

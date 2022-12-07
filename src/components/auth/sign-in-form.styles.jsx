@@ -3,15 +3,15 @@ import styled from 'styled-components'
 import { Container, errorBanner } from './sign-up-form.styles'
 
 export const SignInContainer = styled(Container)`
-  @media screen and (max-width: 700px) {
-    height: 400px;
-  }
-
   span {
     align-self: flex-end;
     font-size: 14px;
     color: #444;
     border-bottom: 1px dotted #444;
+  }
+
+  @media screen and (max-width: 700px) {
+    height: 400px;
   }
 `
 export const ButtonContainer = styled.div`
