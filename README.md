@@ -2,6 +2,7 @@
 
 An e-commerce website with React, React Redux, and Firebase
 
+
 ### Features
 
 - [Redux Toolkit](https://redux-toolkit.js.org/): state management for book products and cart
@@ -14,3 +15,13 @@ An e-commerce website with React, React Redux, and Firebase
 - [Stripe API](https://www.npmjs.com/package/stripe) : handle online payments by stripe
 - [Goodreads API](https://www.goodreads.com/api): fetch book rating data from Goodreads(the largest site for readers and book recommendations)
 - [styled-components](https://styled-components.com/): CSS in JS
+
+
+##### Home Page
+![image](https://github.com/jssffl/bookstore-app/blob/main/bookstore-app-homepage.png)
+
+##### Book Page
+![image]([https://github.com/jssffl/bookstore-app/blob/main/bookstore-app-homepage.png](https://github.com/jssffl/bookstore-app/blob/main/bookstore-app-bookpage.png))
+
+##### Login Page
+![image](https://github.com/jssffl/bookstore-app/blob/main/bookstore-app-authpage.png)
