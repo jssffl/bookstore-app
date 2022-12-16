@@ -5,15 +5,15 @@ An e-commerce website with React, React Redux, and Firebase
 
 ## Features
 
-- [Redux Toolkit](https://redux-toolkit.js.org/): state management for book products and cart
+- [Redux Toolkit](https://redux-toolkit.js.org/): State management for book products and cart
   - sync logic: Add books to cart  and remove books from cart
-  - async logic: using createAsyncThunk to fetch book data from firebase
-  - selector: using createSelector ([Reselect](https://www.npmjs.com/package/reselect)) to calculate derived Data from state and create memoized selector to optimize performance
-  - storage: using [Redux-persist](https://www.npmjs.com/package/redux-persist) and [Reduxjs-toolkit-persist](https://www.npmjs.com/package/reduxjs-toolkit-persist) to store cart data in user's session storage
+  - async logic: Use createAsyncThunk to fetch book data from firebase
+  - selector: Use createSelector ([Reselect](https://www.npmjs.com/package/reselect)) to calculate derived Data from state and create memoized selector to optimize performance
+  - storage: Use [Redux-persist](https://www.npmjs.com/package/redux-persist) and [Reduxjs-toolkit-persist](https://www.npmjs.com/package/reduxjs-toolkit-persist) to store cart data in user's session storage
 - [React Router v6](https://reactrouter.com/en/main): build SPA 
-- [Firebase](https://firebase.google.com/) : database for book products & authentication for signin/signup and google singin
-- [Stripe API](https://www.npmjs.com/package/stripe) : handle online payments by stripe
-- [Goodreads API](https://www.goodreads.com/api): fetch book rating data from Goodreads(the largest site for readers and book recommendations)
+- [Firebase](https://firebase.google.com/) : Database for book products & authentication for signin/signup and google singin
+- [Stripe API](https://www.npmjs.com/package/stripe) : Handle online payments by stripe
+- [Goodreads API](https://www.goodreads.com/api): Fetch book rating data from Goodreads(the largest site for readers and book recommendations) via Netlify function
 - [styled-components](https://styled-components.com/): CSS in JS
 
 
