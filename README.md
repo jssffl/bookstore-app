@@ -6,10 +6,10 @@ An e-commerce website with React, React Redux, and Firebase
 ## Features
 
 - [Redux Toolkit](https://redux-toolkit.js.org/): State management for book products and cart
-  - sync logic: Add books to cart  and remove books from cart
-  - async logic: Use createAsyncThunk to fetch book data from firebase
-  - selector: Use createSelector ([Reselect](https://www.npmjs.com/package/reselect)) to calculate derived Data from state and create memoized selector to optimize performance
-  - storage: Use [Redux-persist](https://www.npmjs.com/package/redux-persist) and [Reduxjs-toolkit-persist](https://www.npmjs.com/package/reduxjs-toolkit-persist) to store cart data in user's session storage
+  - Sync logic: Add books to cart  and remove books from cart
+  - Async logic: Use createAsyncThunk to fetch book data from firebase
+  - Selector: Use createSelector ([Reselect](https://www.npmjs.com/package/reselect)) to calculate derived Data from state and create memoized selector to optimize performance
+  - Storage: Use [Redux-persist](https://www.npmjs.com/package/redux-persist) and [Reduxjs-toolkit-persist](https://www.npmjs.com/package/reduxjs-toolkit-persist) to store cart data in user's session storage
 - [React Router v6](https://reactrouter.com/en/main): build SPA 
 - [Firebase](https://firebase.google.com/) : Database for book products & authentication for signin/signup and google singin
 - [Stripe API](https://www.npmjs.com/package/stripe) : Handle online payments by stripe
