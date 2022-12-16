@@ -1,9 +1,9 @@
-## [Bookstore E-commerce ](https://effervescent-muffin-f405f0.netlify.app/)
+# [Bookstore E-commerce ](https://effervescent-muffin-f405f0.netlify.app/)
 
 An e-commerce website with React, React Redux, and Firebase
 
 
-### Features
+## Features
 
 - [Redux Toolkit](https://redux-toolkit.js.org/): state management for book products and cart
   - sync logic: Add/remove cart 
@@ -17,7 +17,7 @@ An e-commerce website with React, React Redux, and Firebase
 - [styled-components](https://styled-components.com/): CSS in JS
 
 
-#### Page
+### Page
 
 <table>
   <tr>
