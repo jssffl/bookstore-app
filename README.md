@@ -17,12 +17,20 @@ An e-commerce website with React, React Redux, and Firebase
 - [styled-components](https://styled-components.com/): CSS in JS
 
 
-#### Home Page / Book Page
-<p float="left">
-  <img src="https://github.com/jssffl/bookstore-app/blob/main/bookstore-app-homepage.png" width="300" />
-  <img src="https://github.com/jssffl/bookstore-app/blob/main/bookstore-app-bookpage.png" width="300" /> 
-</p>
+#### Page
 
+<table>
+  <tr>
+     <td> Home Page</td>
+     <td>Book Page</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/jssffl/bookstore-app/blob/main/bookstore-app-homepage.png" width="50%" /></td>
+    <td> <img src="https://github.com/jssffl/bookstore-app/blob/main/bookstore-app-bookpage.png" width="50%" /> </td>
+
+  </tr>
+ </table>
+ 
 
 ##### Login Page
 ![image](https://github.com/jssffl/bookstore-app/blob/main/bookstore-app-authpage.png)
