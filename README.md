@@ -14,7 +14,7 @@ An e-commerce website with React, React Redux,  Firebase and Stripe
 - [Firebase](https://firebase.google.com/) : Database for book products & authentication for signin/signup and google singin
 - [Stripe API](https://www.npmjs.com/package/stripe) : Handle online payments by stripe
 - [Goodreads API](https://www.goodreads.com/api): Fetch book rating data from Goodreads(the largest site for readers and book recommendations) via Netlify function
-- [styled-components](https://styled-components.com/): CSS in JS
+- [Styled-components](https://styled-components.com/): CSS in JS
 
 
 ### Page
