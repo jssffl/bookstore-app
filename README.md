@@ -12,8 +12,8 @@ An e-commerce website with React, React Redux,  Firebase and Stripe
   - Storage: Use [Redux-persist](https://www.npmjs.com/package/redux-persist) and [Reduxjs-toolkit-persist](https://www.npmjs.com/package/reduxjs-toolkit-persist) to store cart data in user's session storage
 - [React Router v6](https://reactrouter.com/en/main): build SPA 
 - [Firebase](https://firebase.google.com/) : Database for book products & authentication for signin/signup and google singin
-- [Stripe API](https://www.npmjs.com/package/stripe) : Handle online payments by stripe
-- [Goodreads API](https://www.goodreads.com/api): Fetch book rating data from Goodreads(the largest site for readers and book recommendations) via Netlify function
+- [Stripe API](https://www.npmjs.com/package/stripe) : Handle online payments by stripe via Netlify functions
+- [Goodreads API](https://www.goodreads.com/api): Fetch book rating data from Goodreads(the largest site for readers and book recommendations) via Netlify functions
 - [Styled-components](https://styled-components.com/): CSS in JS
 
 
