@@ -351,7 +351,7 @@ export const BOOK_DATA = [
         description:
           'Harry Potter is about to start his fifth year at Hogwarts School of Witchcraft and Wizardry. Unlike most schoolboys, Harry never enjoys his summer holidays, but this summer is even worse than usual. The Dursleys, of course, are making his life a misery, but even his best friends, Ron and Hermione, seem to be neglecting him. Harry has had enough. He is beginning to think he must do something, anything, to change his situation, when the summer holidays come to an end in a very dramatic fashion. What Harry is about to discover in his new year at Hogwarts will turn his world upside down...',
         image:
-          'https://res.cloudinary.com/dqs1cwcmp/image/upload/v1670388095/Bookstore/friends-lovers-and-the-big-terrible-thing_dz5ubr.webp',
+          'https://res.cloudinary.com/dqs1cwcmp/image/upload/v1670388096/Bookstore/harry-potter-and-the-order-of-the-phoenix_hnjltx.webp',
         publicationDate: 'June 21, 2003',
         language: 'english',
         category: 'Literature',

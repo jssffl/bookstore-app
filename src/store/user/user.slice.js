@@ -2,9 +2,6 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   currentUser: null,
-  isLoading: false,
-  error: null,
-  cartItems: [],
 }
 
 export const userSlice = createSlice({
