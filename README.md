@@ -22,14 +22,28 @@ An e-commerce website with React, React Redux, and Firebase
 <table>
   <tr>
     <td><p align="center"><b>Home Page</b></p></td>
-    <td><p align="center"> Book Page</p></td>
+    <td><p align="center"><b>Shop Page</b></p></td>
   </tr>
   <tr>
     <td><img src="https://github.com/jssffl/bookstore-app/blob/main/bookstore-app-homepage.png" width="100%" /></td>
-    <td> <img src="https://github.com/jssffl/bookstore-app/blob/main/bookstore-app-bookpage.png" width="100%" /> </td>
+    <td> <img src="https://github.com/jssffl/bookstore-app/blob/main/bookstore-app-shoppage.png" width="100%" /> </td>
+  </tr>
+   <tr>
+    <td><p align="center"><b>Book Page</b></p></td>
+    <td><p align="center"><b>Login Page</b></p></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/jssffl/bookstore-app/blob/main/bookstore-app-bookpage.png" width="100%" /></td>
+    <td><img src="https://github.com/jssffl/bookstore-app/blob/main/bookstore-app-authpage.png" width="100%" /> </td>
+  </tr>
+    <tr>
+    <td><p align="center"><b>Cart Page</b></p></td>
+    <td><p align="center"><b>Checkout Page</b></p></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/jssffl/bookstore-app/blob/main/bookstore-app-cartpage.png" width="100%" /></td>
+    <td><img src="https://github.com/jssffl/bookstore-app/blob/main/bookstore-app-checkoutpage.png" width="100%" /> </td>
   </tr>
  </table>
  
 
-##### Login Page
-![image](https://github.com/jssffl/bookstore-app/blob/main/bookstore-app-authpage.png)
