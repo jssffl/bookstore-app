@@ -21,8 +21,8 @@ An e-commerce website with React, React Redux, and Firebase
 
 <table>
   <tr>
-    <td><p align="center">Home Page</p></td>
-    <td><p alig="center"> Book Page</p></td>
+    <td><p align="center"><b>Home Page</b></p></td>
+    <td><p align="center"> Book Page</p></td>
   </tr>
   <tr>
     <td><img src="https://github.com/jssffl/bookstore-app/blob/main/bookstore-app-homepage.png" width="100%" /></td>
