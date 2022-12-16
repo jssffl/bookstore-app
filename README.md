@@ -19,8 +19,8 @@ An e-commerce website with React, React Redux, and Firebase
 
 #### Home Page / Book Page
 <p float="left">
-  <img src="https://github.com/jssffl/bookstore-app/blob/main/bookstore-app-homepage.png" width="100" />
-  <img src="https://github.com/jssffl/bookstore-app/blob/main/bookstore-app-homepage.png](https://github.com/jssffl/bookstore-app/blob/main/bookstore-app-bookpage.png" width="100" /> 
+  <img src="https://github.com/jssffl/bookstore-app/blob/main/bookstore-app-homepage.png" width="300" />
+  <img src="https://github.com/jssffl/bookstore-app/blob/main/bookstore-app-bookpage.png" width="300" /> 
 </p>
 
 
