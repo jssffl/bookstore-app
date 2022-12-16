@@ -1,6 +1,6 @@
 ## [Bookstore E-commerce ](https://effervescent-muffin-f405f0.netlify.app/)
 
-An e-commerce website with React, React Redux, and Firebase
+An e-commerce website with React, React Redux,  Firebase and Stripe
 
 
 ### Features
