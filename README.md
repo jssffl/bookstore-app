@@ -21,7 +21,7 @@ An e-commerce website with React, React Redux,  Firebase and Stripe
 
 <table>
   <tr>
-    <th v align="center"><p align="center"">Home Page</p></th>
+    <th align="center">Home Page</th>
     <th><p align="center">Shop Page</p></th>
   </tr>
   <tr>
