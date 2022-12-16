@@ -15,20 +15,12 @@ import {
 
 import { fetchBooksAsync } from './store/books/books.slice'
 
-const BookCategory = lazy(() => import('./routes/shop/book-category.component'))
-const BookBestsellers = lazy(() =>
-  import('./routes/shop/book-bestsellers.components')
-)
 const BookSeries = lazy(() => import('./routes/shop/book-series.component'))
 const BookLanguage = lazy(() => import('./routes/shop/book-language.component'))
-const BookNewReleases = lazy(() =>
-  import('./routes/shop/book-new-releases.component')
-)
+
 const Cart = lazy(() => import('./routes/cart/cart.component.jsx'))
 const Checkout = lazy(() => import('./routes/cart/checkout.component'))
-
 const Account = lazy(() => import('./routes/auth/account.component'))
-const BookPage = lazy(() => import('./routes/book-page/book-page.component'))
 
 function App() {
   const dispatch = useDispatch()
