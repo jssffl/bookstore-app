@@ -7,6 +7,11 @@ import { setCurrentUser } from './store/user/user.slice'
 
 import Home from './routes/home/home.component'
 import MainLayout from './routes/main-layout/main-layout.component'
+import BookBestsellers from './routes/shop/book-bestsellers.components'
+import BookPage from './routes/book-page/book-page.component'
+import BookNewReleases from './routes/shop/book-new-releases.component'
+import BookCategory from './routes/shop/book-category.component'
+
 import Authentication from './routes/auth/login.component'
 import {
   createUserDocumentFromAuth,
@@ -21,7 +26,6 @@ const BookLanguage = lazy(() => import('./routes/shop/book-language.component'))
 const Cart = lazy(() => import('./routes/cart/cart.component.jsx'))
 const Checkout = lazy(() => import('./routes/cart/checkout.component'))
 const Account = lazy(() => import('./routes/auth/account.component'))
-
 function App() {
   const dispatch = useDispatch()
   useEffect(() => {
